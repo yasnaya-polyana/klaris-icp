@@ -1,0 +1,249 @@
+# Klaris.ai — ICP scoring weights
+# Version: 1.0.0  |  Date: 2026-09-11
+#
+# This file is the ONLY place numbers live. The agent gathers evidence;
+# score.py does the arithmetic. Retune here, re-score every saved account.
+#
+# Product context: Klaris reviews medical device technical documentation
+# against regulatory requirement libraries (EU MDR/IVDR first, FDA second),
+# flags gaps anchored to clauses, and cross-checks documents for drift.
+# It reviews; it does not draft.
+#
+# Motion assumption: founder-led, GBP 15-60k ACV.
+# Data assumption: public sources + LinkedIn Sales Navigator only.
+
+meta:
+  version: "1.0.0"
+  regime_priority: ["EU_MDR", "EU_IVDR", "FDA"]
+  headcount_band: [30, 400]
+  acv_band_gbp: [15000, 60000]
+
+# ---------------------------------------------------------------------------
+# LAYER 0 — HARD GATES (binary). Fail any -> Tier D, stop research.
+# ---------------------------------------------------------------------------
+gates:
+  legal_manufacturer:
+    rule: "Is the legal manufacturer of a medical device or IVD."
+    fails_if: ["distributor", "contract_manufacturer", "CRO", "pure_consultancy", "hospital", "academic"]
+    why: "Only the legal manufacturer owns the technical file. A CM has nothing for Klaris to review."
+
+  headcount_in_band:
+    rule: "Headcount between 30 and 400 inclusive."
+    why: "Below 30 there is rarely a technical file or a budget. Above 400 the in-house RA team solves it with people and procurement slows the deal."
+
+  notified_body_exposure:
+    rule: >
+      At least one marketed or in-development device in EU Class IIa, IIb, III,
+      or Class I sterile / measuring / reusable-surgical (Is/Im/Ir),
+      or IVDR Class B, C, D,
+      or FDA Class II (510(k)/De Novo) or Class III (PMA).
+    fails_if: ["EU Class I non-sterile only", "FDA Class I exempt only", "wellness / non-device software"]
+    why: >
+      Class I non-sterile self-certifies with no Notified Body review, so there is
+      no deficiency letter and no pain. NOTE: Class I sterile, measuring, and
+      reusable-surgical DO require NB involvement for those specific aspects -
+      they pass this gate. This is the gate that disqualifies the most
+      otherwise-attractive accounts. Do not soften it.
+
+  technical_file_exists:
+    rule: "Past design freeze - a technical file / DHF exists or is actively being built."
+    fails_if: ["pre-prototype", "discovery research only", "no device concept frozen"]
+    why: "Pure early R&D has nothing to review yet. Revisit at design freeze."
+
+# ---------------------------------------------------------------------------
+# LAYER 1 — FIT (0-100). Who they are. Slow-moving.
+# ---------------------------------------------------------------------------
+fit:
+  regulatory_burden:
+    cap: 30
+    signals:
+      class_eu_iii:            {points: 12, exclusive_group: highest_class}
+      class_eu_iib:            {points: 10, exclusive_group: highest_class}
+      class_eu_iia:            {points: 8,  exclusive_group: highest_class}
+      class_eu_is_im_ir:       {points: 4,  exclusive_group: highest_class}
+      class_ivdr_d:            {points: 12, exclusive_group: highest_class}
+      class_ivdr_c:            {points: 10, exclusive_group: highest_class}
+      class_ivdr_b:            {points: 7,  exclusive_group: highest_class}
+      dual_regime_eu_and_us:   {points: 6}
+      software_samd_or_ai:     {points: 6}
+      device_families_2_to_4:  {points: 3,  exclusive_group: portfolio_breadth}
+      device_families_5_plus:  {points: 6,  exclusive_group: portfolio_breadth}
+
+  compliance_spend_evidence:
+    cap: 25
+    note: "Your 'actively spending money in compliance/reg' requirement."
+    signals:
+      named_eqms_in_use:       {points: 10}
+      active_nb_or_cert:       {points: 8}
+      retained_ra_qa_consultancy: {points: 5}
+      ra_qa_fte_ratio_ge_5pct: {points: 7}
+    why_eqms_heaviest: >
+      A named eQMS (Greenlight Guru, Qualio, MasterControl, Veeva, Matrix
+      Requirements, Scilife, Dot Compliance, Ketryx) is the cheapest reliable
+      proof that a compliance SOFTWARE line item can exist - as opposed to a
+      company that only throws consultants at the problem. It is not a
+      competitor signal; Klaris is complementary to a QMS.
+
+  company_shape:
+    cap: 20
+    signals:
+      headcount_80_250:  {points: 20, exclusive_group: headcount_band}
+      headcount_40_79:   {points: 16, exclusive_group: headcount_band}
+      headcount_251_400: {points: 14, exclusive_group: headcount_band}
+      headcount_30_39:   {points: 10, exclusive_group: headcount_band}
+
+  readiness_ai_receptivity:
+    cap: 15
+    signals:
+      cloud_eqms_not_paper:      {points: 5}
+      ai_in_product_or_adoption: {points: 4}
+      vc_backed_or_recent_raise: {points: 3}
+      modern_ra_leader_profile:  {points: 3}
+
+  document_surface_drift_risk:
+    cap: 10
+    signals:
+      post_ma_portfolio_integration: {points: 5}
+      many_markets_or_ifu_languages: {points: 3}
+      legacy_mdd_docs_being_uplifted: {points: 2}
+
+# ---------------------------------------------------------------------------
+# LAYER 2 — TRIGGER (0-100). What is happening now. Decays.
+# ---------------------------------------------------------------------------
+trigger:
+  hiring_qa_ra:
+    cap: 30
+    signals:
+      head_of_ra_or_qa_req_open:     {points: 15}
+      ra_qa_req_open:                {points: 8, repeatable: true, repeat_cap: 20}
+      req_open_over_90_days:         {points: 8}
+      new_ra_qa_leader_under_90d:    {points: 12}
+      ra_qa_leader_left_no_backfill: {points: 8}
+      jd_mentions_remediation_lang:  {points: 7}
+    note: >
+      'req_open_over_90_days' is the sharpest line in this family: a company
+      that has advertised for 90+ days has publicly admitted it needs capacity
+      and failed to hire it. That is the moment tooling gets bought.
+      'jd_mentions_remediation_lang' matches: MDR remediation, technical file,
+      gap assessment, notified body submission, documentation backlog,
+      technical documentation remediation, MDR transition.
+
+  new_product_to_market:
+    cap: 30
+    signals:
+      funding_lt_12m_with_reg_use_of_funds: {points: 12}
+      public_launch_or_approval_target_next_year: {points: 12}
+      clinical_study_completing_le_12m: {points: 10}
+      new_market_entry_us_eu_or_eu_us:  {points: 10}
+      new_udi_di_or_510k_filed:         {points: 8}
+    note: >
+      'funding with regulatory use-of-funds' is budget explicitly earmarked for
+      the job Klaris does. 'new_market_entry' is high-pain/low-capability: a US
+      firm entering the EU must build an MDR technical file from scratch with
+      no in-house EU RA muscle.
+
+  prior_regulatory_pain:
+    cap: 25
+    note: "ADDED - not in the original brief. Highest willingness-to-pay signal available."
+    signals:
+      warning_letter_or_483_design_or_doc_control: {points: 15}
+      public_regulatory_delay_or_resubmission:     {points: 12}
+      documentation_or_labelling_recall_fsca:      {points: 10}
+      notified_body_switch:                        {points: 8}
+    why: >
+      A company that has eaten a deficiency letter or a 21 CFR 820.30/820.40
+      citation has already paid for this lesson in months of delayed revenue.
+      It converts Klaris from 'nice idea' to 'never again'. Labelling/IFU
+      recalls are literally the Consistency Reviewer's use case.
+
+  deadline_pressure:
+    cap: 15
+    note: "ADDED - externally imposed, dated, non-negotiable."
+    signals:
+      legacy_mdd_cert_deadline_under_18m: {points: 15}
+      ivdr_transition_approaching:        {points: 12}
+      nb_surveillance_audit_le_6m:        {points: 5}
+    reference_deadlines:
+      mdr_legacy_class_iii_and_iib: "2027-12-31"
+      mdr_legacy_class_iia_is_im:   "2028-12-31"
+    why: "Nobody negotiates with a deadline."
+
+# Applied per-signal BEFORE the family cap.
+recency_decay:
+  under_90_days: 1.0
+  d90_to_180:    0.7
+  d180_to_365:   0.4
+  over_365_days: 0.1
+  applies_to: trigger
+
+# ---------------------------------------------------------------------------
+# LAYER 3 — ACCESS (0-40). About us, not them.
+# ---------------------------------------------------------------------------
+access:
+  cap: 40
+  signals:
+    warm_path_shared_investor_or_network: {points: 15}
+    economic_buyer_named_and_verified:    {points: 10}
+    champion_identified:                  {points: 8}
+    buyer_publicly_active:                {points: 7}
+  why_separate: >
+    A red-hot account you cannot reach is a different problem from a cold
+    account you can. Averaging them into one number hides which.
+
+# ---------------------------------------------------------------------------
+# COMPOSITE & TIERS
+# ---------------------------------------------------------------------------
+composite:
+  formula: "0.40*fit + 0.45*trigger + 0.15*(access * 2.5)"
+  weights:
+    fit: 0.40
+    trigger: 0.45
+    access: 0.15
+  access_normaliser: 2.5   # access is out of 40; x2.5 -> out of 100
+  why_trigger_leads: >
+    At pre-seed with founder-led sales you cannot manufacture need - you can
+    only catch it in flight. Fit stays close behind at 0.40 because a bad-fit
+    early logo becomes a bad reference customer, which is expensive at this
+    stage.
+
+# Two threshold sets. `tiers` is what score.py uses.
+#
+# CALIBRATION NOTE (2026-09-11, cohort of 13 real EU/UK accounts):
+# Public-source research surfaces only a fraction of the model's theoretical
+# signal. Measured capture rate per family, averaged over the cohort:
+#     company_shape                95%   regulatory_burden          63%
+#     readiness_ai_receptivity     29%   compliance_spend_evidence  28%
+#     hiring_qa_ra                 14%   new_product_to_market       4%
+#     document_surface_drift_risk   2%   prior_regulatory_pain       1%
+#     deadline_pressure             0%
+# Observed composite: min 19.4, median 25.7, max 36.1.
+# The full-evidence thresholds below put every real account in Tier D, which is
+# useless. `tiers` is therefore calibrated to the observed distribution:
+# A = top ~15% AND at least one fresh trigger; B = top ~40%; C = above minimum.
+#
+# THESE ARE PROVISIONAL. Recalibrate after the first ~50 accounts, and again
+# once there is closed-won/lost data to fit against. The ordering the model
+# produces is trustworthy; the absolute cut points are not, yet.
+
+tiers:
+  A: {min_composite: 34, min_trigger: 8, label: "Strike this week"}
+  B: {min_composite: 28, label: "Work it"}
+  C: {min_composite: 22, label: "Trigger-watch - good fit, nothing happening. Monitor, do not sell."}
+  D: {min_composite: 0,  label: "Park / disqualify"}
+
+# Use these when evidence is near-complete (CRM history, paid enrichment,
+# a discovery call already held). Pass --full-evidence to score.py.
+tiers_full_evidence:
+  A: {min_composite: 70, min_trigger: 50, label: "Strike this week"}
+  B: {min_composite: 55, label: "Work it"}
+  C: {min_composite: 40, label: "Trigger-watch"}
+  D: {min_composite: 0,  label: "Park / disqualify"}
+
+# ---------------------------------------------------------------------------
+# NEGATIVE SIGNALS — subtract from composite after tiering inputs computed
+# ---------------------------------------------------------------------------
+penalties:
+  large_inhouse_ra_team_flat:   {points: -10, rule: ">10 RA FTEs and not growing - solved it with people"}
+  certification_just_completed: {points: -8,  rule: "Full cert cycle closed <3m ago - no trigger for ~18-24m"}
+  paper_or_sharepoint_only_qms: {points: -5,  rule: "Not a software buyer yet"}
+  known_competitor_recent_renewal: {points: -12, rule: "Locked for the cycle"}

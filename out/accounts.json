@@ -1,0 +1,1200 @@
+[
+  {
+    "company": "Skin Analytics",
+    "domain": "skin-analytics.com",
+    "hq": "London, UK",
+    "headcount": 100,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of DERM, holds CE and UKCA marks in own name.",
+        "url": "https://skin-analytics.com/news/regulatory-certification/derm-class-iii-ce-mark/"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "Doubled from 50 to 100 headcount in 2025.",
+        "url": "https://tech.eu/2025/04/16/skin-analytics-raises-ps15m-series-b-to-build-a-future-where-nobody-dies-of-skin-cancer/"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "EU MDR Class III CE mark for DERM - world's first autonomous AI skin cancer decision device.",
+        "url": "https://skin-analytics.com/news/regulatory-certification/derm-class-iii-ce-mark/"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Certified and marketed; NHS deployments live.",
+        "url": "https://skin-analytics.com/about-us/"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iii",
+        "evidence": "DERM holds EU MDR Class III CE mark.",
+        "url": "https://skin-analytics.com/news/regulatory-certification/derm-class-iii-ce-mark/"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "AI as a Medical Device - autonomous triage, no human review.",
+        "url": "https://skin-analytics.com/news/regulatory-certification/derm-class-iii-ce-mark/"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "Holds Class III CE plus Class IIa UKCA mark - active NB relationship.",
+        "url": "https://skin-analytics.com/skin-analytics-achieves-class-iia-ukca-mark-for-derm/"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "100 employees post Series B.",
+        "url": "https://tech.eu/2025/04/16/skin-analytics-raises-ps15m-series-b-to-build-a-future-where-nobody-dies-of-skin-cancer/"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "Core product is an AI device.",
+        "url": "https://skin-analytics.com/about-us/"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "GBP 15M Series B led by Intrepid Growth Partners.",
+        "url": "https://tech.eu/2025/04/16/skin-analytics-raises-ps15m-series-b-to-build-a-future-where-nobody-dies-of-skin-cancer/"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "CE (EU) plus UKCA (GB) - dual regime burden, though not yet FDA.",
+        "url": "https://skin-analytics.com/skin-analytics-achieves-class-iia-ukca-mark-for-derm/"
+      },
+      {
+        "id": "funding_lt_12m_with_reg_use_of_funds",
+        "age_days": 513,
+        "evidence": "GBP 15M Series B Apr 2025 to scale AI skin cancer detection worldwide. NOTE: >12m old, decays to 0.1x.",
+        "url": "https://tech.eu/2025/04/16/skin-analytics-raises-ps15m-series-b-to-build-a-future-where-nobody-dies-of-skin-cancer/"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "James Hamlyn, VP Quality & Regulatory Affairs, named on company site.",
+        "url": "https://skin-analytics.com/about-us/"
+      },
+      {
+        "id": "buyer_publicly_active",
+        "evidence": "Company publishes regulatory-certification news series; VP QARA profile public.",
+        "url": "https://skin-analytics.com/news-category/regulatory-certification/"
+      },
+      {
+        "id": "ra_qa_req_open",
+        "age_days": 20,
+        "evidence": "Live vacancy: Head of Clinical Safety & Governance - clinical risk management and alignment with regulatory requirements. Scored conservatively as a general RA/QA req, not a Head-of-RA req, since the remit is clinical governance.",
+        "url": "https://www.glassdoor.co.uk/job-listing/head-of-clinical-safety-governance-skin-analytics-JV_IC2671300_KO0,34_KE35,49.htm?jl=1009940081585"
+      },
+      {
+        "id": "cloud_eqms_not_paper",
+        "evidence": "Manufactures medical devices and complies with ISO 13485 and ISO 27001 - operating a maintained QMS.",
+        "url": "https://builtinlondon.uk/company/skin-analytics/jobs"
+      }
+    ],
+    "people": [
+      {
+        "name": "James Hamlyn",
+        "title": "VP Quality & Regulatory Affairs",
+        "role": "economic_buyer",
+        "evidence": "Listed on Skin Analytics management team; 12+ yrs medical device regulatory and quality affairs, particular interest in SaMD.",
+        "url": "https://skin-analytics.com/about-us/",
+        "confidence": "high"
+      },
+      {
+        "name": "Neil Daly",
+        "title": "CEO",
+        "role": "blocker",
+        "evidence": "CEO, listed on management team - signs at this ACV if VP QARA lacks discretion.",
+        "url": "https://skin-analytics.com/about-us/",
+        "confidence": "high"
+      }
+    ],
+    "outreach_hook": "World-first Class III autonomous AI device: the technical file is the product's whole defensibility, and every change to an autonomous clinical-decision device re-opens it.",
+    "notes": "Class III + SaMD + autonomous decision-making is the heaviest documentation combination in the model. Series B is >12m old so its trigger value has decayed - check for a Series C or a new indication."
+  },
+  {
+    "company": "ONWARD Medical",
+    "domain": "onwd.com",
+    "hq": "Eindhoven, Netherlands",
+    "headcount": 137,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of ARC-EX and ARC-IM neurostimulation systems.",
+        "url": "https://www.onwd.com/contact/"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "137 employees at 31 Dec 2025, up 33.9% YoY.",
+        "url": "https://stockanalysis.com/quote/ebr/ONWD/employees/"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "Implantable and external neurostimulation - Class III / high-risk, plus FDA De Novo route.",
+        "url": "https://ir.onwd.com/"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Commercial product with regulatory clearances in place.",
+        "url": "https://ir.onwd.com/"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iii",
+        "evidence": "Implantable neurostimulation (ARC-IM) - highest risk class.",
+        "url": "https://ir.onwd.com/"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "Euronext-listed NL company with US regulatory programme and US commercial operations.",
+        "url": "https://ir.onwd.com/"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Neurostimulation platform with software-controlled therapy delivery.",
+        "url": "https://www.onwd.com/"
+      },
+      {
+        "id": "device_families_2_to_4",
+        "evidence": "ARC-EX (external) and ARC-IM (implantable) programmes.",
+        "url": "https://www.onwd.com/"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "Listed medtech with active certification programme.",
+        "url": "https://ir.onwd.com/"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "137 FTE.",
+        "url": "https://stockanalysis.com/quote/ebr/ONWD/employees/"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "Publicly listed on Euronext (ONWD), raises regularly.",
+        "url": "https://ir.onwd.com/"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "Software-driven closed-loop neurostimulation.",
+        "url": "https://www.onwd.com/"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Shari O'Quinn, Chief Clinical, Regulatory and Quality Officer - C-level RA/QA owner.",
+        "url": "https://theorg.com/org/onward"
+      },
+      {
+        "id": "champion_identified",
+        "evidence": "Erika Ross PhD, VP Global Clinical & Regulatory.",
+        "url": "https://www.compuserve.com/politics/story/0022/20230123/8734328.htm"
+      },
+      {
+        "id": "ra_qa_req_open",
+        "age_days": 15,
+        "evidence": "Live vacancy: Senior Manager Regulatory Affairs on ONWARD's own careers portal, observed open 2026-09-11.",
+        "url": "https://careers.onwd.com/senior-manager-regulatory-affairs/en/apply"
+      },
+      {
+        "id": "new_ra_qa_leader_under_90d",
+        "age_days": 400,
+        "evidence": "Erika Ross PhD joined as VP Global Clinical & Regulatory (Jan 2023) - long past, decays to near zero. Recorded for completeness.",
+        "url": "https://www.compuserve.com/politics/story/0022/20230123/8734328.htm"
+      }
+    ],
+    "people": [
+      {
+        "name": "Shari O'Quinn",
+        "title": "Chief Clinical, Regulatory and Quality Officer",
+        "role": "economic_buyer",
+        "evidence": "C-level owner of regulatory and quality at ONWARD - budget authority for RA tooling sits here.",
+        "url": "https://theorg.com/org/onward",
+        "confidence": "medium"
+      },
+      {
+        "name": "Erika Ross, PhD",
+        "title": "VP, Global Clinical & Regulatory",
+        "role": "champion",
+        "evidence": "Joined Jan 2023 assuming global leadership of clinical and regulatory activities.",
+        "url": "https://www.compuserve.com/politics/story/0022/20230123/8734328.htm",
+        "confidence": "medium"
+      },
+      {
+        "name": "(role) Senior Manager, Regulatory Affairs",
+        "title": "Senior Manager Regulatory Affairs - VACANT, req live",
+        "role": "champion",
+        "evidence": "Open req on ONWARD careers site. Whoever is named as hiring manager on this req is the RA budget owner (buyer-map tactic 3).",
+        "url": "https://careers.onwd.com/senior-manager-regulatory-affairs/en/apply",
+        "confidence": "high",
+        "person_found": false
+      }
+    ],
+    "outreach_hook": "33.9% headcount growth in one year against a Class III implantable technical file - documentation drift risk scales with how fast the team grew.",
+    "notes": "Headcount growth is the strongest current trigger. RA/QA is C-level, which is unusual at 137 people and signals genuine regulatory investment - a strong Fit indicator. Verify O'Quinn is still in seat; theorg data can lag."
+  },
+  {
+    "company": "Nyxoah",
+    "domain": "nyxoah.com",
+    "hq": "Mont-Saint-Guibert, Belgium",
+    "headcount": 154,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of the Genio hypoglossal neurostimulation system.",
+        "url": "https://www.nyxoah.com/management-team"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "153.7 FTE at 31 Dec 2025 (67.1 Europe, 78 US, 6.6 Israel, 2 Australia).",
+        "url": "https://www.sec.gov/Archives/edgar/data/1857190/000110465926035161/nyxh-20251231x20f.htm"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "Implantable neurostimulator - Class III, CE marked, plus FDA approval for Genio.",
+        "url": "https://nyxoah.gcs-web.com/news-releases/news-release-details/nyxoah-receives-approval-fda-genior-system-treatment-obstructive"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "CE marked and FDA approved product on market.",
+        "url": "https://nyxoah.gcs-web.com/news-releases/news-release-details/nyxoah-receives-approval-fda-genior-system-treatment-obstructive"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iii",
+        "evidence": "Genio is an implantable hypoglossal neurostimulation system.",
+        "url": "https://www.nyxoah.com/management-team"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "CE marked in EU and FDA approved in US - two full technical files to keep consistent.",
+        "url": "https://nyxoah.gcs-web.com/news-releases/news-release-details/nyxoah-receives-approval-fda-genior-system-treatment-obstructive"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Battery-free leadless neurostimulation with external activation software.",
+        "url": "https://www.nyxoah.com/management-team"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "Active CE certification maintained alongside FDA approval.",
+        "url": "https://nyxoah.gcs-web.com/news-releases/news-release-details/nyxoah-receives-approval-fda-genior-system-treatment-obstructive"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "153.7 FTE.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1857190/000110465926035161/nyxh-20251231x20f.htm"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "Dual-listed Nasdaq/Euronext, raises regularly.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1857190/000110465926035161/nyxh-20251231x20f.htm"
+      },
+      {
+        "id": "ra_qa_fte_ratio_ge_5pct",
+        "evidence": "Dedicated Chief Regulatory and Quality Officer plus VP RA - RA/QA function scaled at C-level.",
+        "url": "https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html"
+      },
+      {
+        "id": "many_markets_or_ifu_languages",
+        "evidence": "Operations across Belgium, Germany, UK, Israel, Australia and the US.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1857190/000110465926035161/nyxh-20251231x20f.htm"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Francis Kim, Chief Regulatory and Quality Officer, leads global regulatory and quality.",
+        "url": "https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html"
+      },
+      {
+        "id": "champion_identified",
+        "evidence": "Nathalie Gilat, VP RA / GM Israel, 14+ yrs global clinical and regulatory.",
+        "url": "https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html"
+      }
+    ],
+    "people": [
+      {
+        "name": "Francis Kim",
+        "title": "Chief Regulatory and Quality Officer",
+        "role": "economic_buyer",
+        "evidence": "Appointed Nov 2023 to lead global Regulatory and Quality departments; 25+ yrs medical device and life sciences.",
+        "url": "https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html",
+        "confidence": "high"
+      },
+      {
+        "name": "Nathalie Gilat",
+        "title": "VP Regulatory Affairs / GM Israel",
+        "role": "champion",
+        "evidence": "Joined Nyxoah 2014, 14+ yrs global clinical and regulatory affairs.",
+        "url": "https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html",
+        "confidence": "medium"
+      }
+    ],
+    "outreach_hook": "Class III implant certified under both EU MDR and FDA - two technical files describing one device, which is exactly where the Consistency Reviewer earns its keep.",
+    "notes": "Dual-regime Class III at 154 people is close to the theoretical ideal for Klaris. Main risk is a mature in-house RA function that may see tooling as redundant - lead with cross-regime consistency, not gap-finding."
+  },
+  {
+    "company": "CorWave",
+    "domain": "corwave.com",
+    "hq": "Clichy, Paris, France",
+    "headcount": 130,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of the CorWave LVAD cardiac support system.",
+        "url": "https://www.corwave.com/leadership-team/"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~130 staff; opened a dedicated heart pump factory.",
+        "url": "https://frenchhealthcare.com/with-its-new-urban-heart-pump-factory-corwave-enters-a-new-era/"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "Implantable left ventricular assist device - Class III.",
+        "url": "https://www.corwave.com/leadership-team/"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Entered clinical phase and industrial ramp-up.",
+        "url": "https://www.businesswire.com/news/home/20210921005492/en/CorWave-Attracts-Global-Talent-Strengthening-Its-Management-Team-in-Preparation-for-Clinical-Phase-and-Industrial-Ramp-Up"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iii",
+        "evidence": "Implantable LVAD - highest risk class, most demanding technical documentation.",
+        "url": "https://www.corwave.com/leadership-team/"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "~130 staff.",
+        "url": "https://frenchhealthcare.com/with-its-new-urban-heart-pump-factory-corwave-enters-a-new-era/"
+      },
+      {
+        "id": "ra_qa_fte_ratio_ge_5pct",
+        "evidence": "Dedicated QA/RA team with a VP and an Associate Director layer.",
+        "url": "https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "VC-backed (Ysios Capital among investors).",
+        "url": "https://ysioscapital.com/2021/09/21/corwave-attracts-global-talent-strengthening-its-management-team-in-preparation-for-clinical-phase-and-industrial-ramp-up/"
+      },
+      {
+        "id": "public_launch_or_approval_target_next_year",
+        "age_days": 200,
+        "evidence": "New manufacturing facility opened for industrial ramp-up ahead of clinical and commercial phase. Date conservative.",
+        "url": "https://frenchhealthcare.com/with-its-new-urban-heart-pump-factory-corwave-enters-a-new-era/"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Paul Cornelison, VP Regulatory Affairs, Quality Assurance and Clinical Affairs.",
+        "url": "https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs"
+      },
+      {
+        "id": "champion_identified",
+        "evidence": "Laura Gonzalez, Regulatory Affairs Associate Director.",
+        "url": "https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs"
+      }
+    ],
+    "people": [
+      {
+        "name": "Paul Cornelison",
+        "title": "VP Regulatory Affairs, Quality Assurance & Clinical Affairs",
+        "role": "economic_buyer",
+        "evidence": "Leads the combined Regulatory and Quality function at CorWave.",
+        "url": "https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs",
+        "confidence": "medium"
+      },
+      {
+        "name": "Laura Gonzalez",
+        "title": "Regulatory Affairs Associate Director",
+        "role": "champion",
+        "evidence": "Associate Director within CorWave's QA/RA team - hands-on owner of the technical file.",
+        "url": "https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs",
+        "confidence": "medium"
+      }
+    ],
+    "outreach_hook": "A Class III implantable moving from clinical phase into industrial ramp-up - the point where the design history file has to survive first real scrutiny.",
+    "notes": "Pre-market Class III. Highest documentation burden in the device world. Trigger timing needs confirming - check current clinical trial status and planned CE submission date."
+  },
+  {
+    "company": "Quantum Surgical",
+    "domain": "quantumsurgical.com",
+    "hq": "Montpellier, France",
+    "headcount": 120,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of the Epione robotic tumour ablation system.",
+        "url": "https://www.quantumsurgical.com/about-quantum"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "Mid-size French medtech scale-up; leadership roster consistent with ~100-150 staff. ESTIMATE - verify.",
+        "url": "https://theorg.com/org/quantum-surgical"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "CE marked robotic surgical system - Class IIb.",
+        "url": "https://www.bioworld.com/articles/723570-quantum-surgical-gets-ce-mark-for-epione?v=preview"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "CE marked and commercially deployed (e.g. Institut Paoli-Calmettes).",
+        "url": "https://www.quantumsurgical.com/news/the-paoli-calmettes-institute-adopts-epione-quantum-surgicals-minimally-invasive-surgical-robot-that-destroy-cancerous-tumors"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iib",
+        "evidence": "CE marked robotic-assisted surgical system for tumour ablation.",
+        "url": "https://www.bioworld.com/articles/723570-quantum-surgical-gets-ce-mark-for-epione?v=preview"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "CE mark plus US market activity and a US VP of Sales.",
+        "url": "https://theorg.com/org/quantum-surgical"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Robotic platform with substantial software stack (DICOM architects, software architects on staff).",
+        "url": "https://theorg.com/org/quantum-surgical"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "Holds an active CE certificate for Epione.",
+        "url": "https://www.bioworld.com/articles/723570-quantum-surgical-gets-ce-mark-for-epione?v=preview"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "Estimated ~120 staff.",
+        "url": "https://theorg.com/org/quantum-surgical"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "AI/robotics-driven surgical planning and guidance.",
+        "url": "https://www.quantumsurgical.com/"
+      },
+      {
+        "id": "documentation_or_labelling_recall_fsca",
+        "age_days": 200,
+        "evidence": "Issued a safety warning on Epione surgical robot software in Europe - a field safety action on a software device. Date conservative pending confirmation.",
+        "url": "https://www.massdevice.com/quantum-surgical-warns-epione-software-europe/"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Elise Lagacherie, Quality & Regulatory Affairs Director.",
+        "url": "https://theorg.com/org/quantum-surgical"
+      }
+    ],
+    "people": [
+      {
+        "name": "Elise Lagacherie",
+        "title": "Quality & Regulatory Affairs Director",
+        "role": "economic_buyer",
+        "evidence": "Named Quality & Regulatory Affairs Director at Quantum Surgical SAS.",
+        "url": "https://theorg.com/org/quantum-surgical",
+        "confidence": "medium"
+      },
+      {
+        "name": "Laetitia Messner",
+        "title": "VP Clinical Development",
+        "role": "champion",
+        "evidence": "Clinical development lead - adjacent owner of clinical evaluation documentation.",
+        "url": "https://theorg.com/org/quantum-surgical",
+        "confidence": "medium"
+      }
+    ],
+    "outreach_hook": "A field safety action on Epione software in Europe - exactly the scenario where documentation and labelling consistency gets audited line by line.",
+    "notes": "The software field safety notice is the single best trigger found in this batch. Confirm its date and scope before outreach; if recent, this moves to top of the call list. Headcount is an estimate and must be confirmed against the gate."
+  },
+  {
+    "company": "Quibim",
+    "domain": "quibim.com",
+    "hq": "Valencia, Spain",
+    "headcount": 130,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of QP-Prostate and related imaging biomarker software.",
+        "url": "https://quibim.com/about/our-team"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~130 staff. ESTIMATE - verify.",
+        "url": "https://theorg.com/org/quibim/teams/leadership-team"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "CE marked medical imaging software (SaMD) plus FDA clearance activity.",
+        "url": "https://quibim.com/about/our-team"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Certified, commercially deployed software products.",
+        "url": "https://quibim.com/about/our-team"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iia",
+        "evidence": "CE marked imaging biomarker software - SaMD class IIa or above.",
+        "url": "https://quibim.com/about/our-team"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Entire product line is AI imaging software - IEC 62304 plus AI Act overlay.",
+        "url": "https://quibim.com/"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "EU CE marking alongside US FDA regulatory activity.",
+        "url": "https://theorg.com/org/quibim/teams/leadership-team"
+      },
+      {
+        "id": "device_families_2_to_4",
+        "evidence": "Multiple imaging biomarker products across body regions.",
+        "url": "https://quibim.com/"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "~130 staff.",
+        "url": "https://theorg.com/org/quibim/teams/leadership-team"
+      },
+      {
+        "id": "ra_qa_fte_ratio_ge_5pct",
+        "evidence": "VP-level QA/RA plus a QA/RA Manager layer.",
+        "url": "https://theorg.com/org/quibim/org-chart/josep-hortiguela"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "AI-native imaging company.",
+        "url": "https://quibim.com/"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "VC-backed Spanish scale-up.",
+        "url": "https://startupvalencia.org/directory/quibim/"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Josep Hortiguela, VP of Quality Assurance and Regulatory Affairs.",
+        "url": "https://theorg.com/org/quibim/org-chart/josep-hortiguela"
+      }
+    ],
+    "people": [
+      {
+        "name": "Josep Hortigüela",
+        "title": "VP of Quality Assurance and Regulatory Affairs",
+        "role": "economic_buyer",
+        "evidence": "VP QA/RA at Quibim, corroborated by both LinkedIn and The Org.",
+        "url": "https://theorg.com/org/quibim/org-chart/josep-hortiguela",
+        "confidence": "high"
+      }
+    ],
+    "outreach_hook": "AI imaging software under both CE and FDA: every model update touches IEC 62304 documentation and the clinical evaluation at once.",
+    "notes": "Pure SaMD/AI - the doc stack (62304 + 14971 + clinical evaluation + AI Act) is deep and changes with every release. Strong technical fit. Headcount is an estimate."
+  },
+  {
+    "company": "Salvia BioElectronics",
+    "domain": "salviabioelectronics.com",
+    "hq": "Eindhoven, Netherlands",
+    "headcount": 60,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of an implantable bioelectronic therapy for chronic migraine.",
+        "url": "https://www.salviabioelectronics.com/news"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~60 staff. ESTIMATE - verify.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "Implantable neurostimulation device - Class III.",
+        "url": "https://www.salviabioelectronics.com/news"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "In clinical phase with a dedicated clinical and regulatory function.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iii",
+        "evidence": "Implantable bioelectronic neurostimulation for chronic migraine.",
+        "url": "https://www.salviabioelectronics.com/news"
+      },
+      {
+        "id": "headcount_40_79",
+        "evidence": "~60 staff.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team"
+      },
+      {
+        "id": "ra_qa_fte_ratio_ge_5pct",
+        "evidence": "VP Quality, VP Clinical & Regulatory, Director Clinical Affairs and a Senior Quality Engineer at ~60 staff.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "VC-backed; appointed a US medtech chair of the board.",
+        "url": "https://huntscanlon.com/coulter-partners-places-seasoned-u-s-medtech-executive-jill-schiaparelli-as-chair-of-the-board-of-directors-of-salvia-bioelectronics/"
+      },
+      {
+        "id": "new_ra_qa_leader_under_90d",
+        "age_days": 300,
+        "evidence": "Ger Kamminga appointed VP of Quality, ex-Philips Head of Quality DACH/Benelux. Date uncertain - conservative estimate applied.",
+        "url": "https://hrtoday.in/ger-kamminga-appointed-as-vice-president-of-quality-at-salvia-bioelectronics/"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Roni Diaz, VP Clinical & Regulatory Affairs.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team"
+      },
+      {
+        "id": "champion_identified",
+        "evidence": "Ger Kamminga, VP of Quality.",
+        "url": "https://hrtoday.in/ger-kamminga-appointed-as-vice-president-of-quality-at-salvia-bioelectronics/"
+      }
+    ],
+    "people": [
+      {
+        "name": "Roni Diaz",
+        "title": "VP Clinical & Regulatory Affairs",
+        "role": "economic_buyer",
+        "evidence": "Leads clinical and regulatory affairs at Salvia BioElectronics.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team",
+        "confidence": "medium"
+      },
+      {
+        "name": "Ger Kamminga",
+        "title": "VP of Quality",
+        "role": "champion",
+        "evidence": "Appointed VP of Quality; 20+ yrs quality management, previously Head of Quality DACH and Benelux at Philips.",
+        "url": "https://hrtoday.in/ger-kamminga-appointed-as-vice-president-of-quality-at-salvia-bioelectronics/",
+        "confidence": "medium"
+      },
+      {
+        "name": "Eimear Campbell",
+        "title": "Senior Quality Engineer",
+        "role": "champion",
+        "evidence": "Hands-on quality engineering at Salvia.",
+        "url": "https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team",
+        "confidence": "low"
+      }
+    ],
+    "outreach_hook": "A new VP of Quality from Philips inheriting a Class III implantable technical file he did not write - the classic case for an independent gap check.",
+    "notes": "Four named QA/RA/clinical staff at ~60 people is a very high RA density and a strong 'already spending' signal. Ger Kamminga's start date needs confirming - if within 90 days, the new-leader trigger goes from 1.2 to 12 points."
+  },
+  {
+    "company": "NICO.LAB",
+    "domain": "nico-lab.com",
+    "hq": "Amsterdam, Netherlands",
+    "headcount": 60,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "NICo-Lab B.V. is the named submitter on FDA 510(k) K231570.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~60 staff. ESTIMATE - verify.",
+        "url": "https://theorg.com/org/nico-lab/teams/clinical-development-and-regulatory-affairs"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "FDA 510(k)-cleared stroke imaging software (Class II) with CE marking in the EU.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Cleared and marketed product.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iia",
+        "evidence": "AI stroke imaging triage software - SaMD.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Pure AI imaging software product.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "FDA 510(k) cleared and EU marketed - two technical files.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      },
+      {
+        "id": "headcount_40_79",
+        "evidence": "~60 staff.",
+        "url": "https://theorg.com/org/nico-lab/teams/clinical-development-and-regulatory-affairs"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "AI-native stroke imaging company.",
+        "url": "https://theorg.com/org/nico-lab/teams/clinical-development-and-regulatory-affairs"
+      },
+      {
+        "id": "new_udi_di_or_510k_filed",
+        "age_days": 300,
+        "evidence": "510(k) K231570 filed with Veronica Padharia as Principal Regulatory Affairs contact. Conservative age.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      },
+      {
+        "id": "champion_identified",
+        "evidence": "Veronica Padharia, Principal Regulatory Affairs, named on the FDA submission.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf"
+      }
+    ],
+    "people": [
+      {
+        "name": "Veronica Padharia",
+        "title": "Principal Regulatory Affairs",
+        "role": "champion",
+        "evidence": "Named as the Principal Regulatory Affairs contact on NICo-Lab B.V.'s FDA 510(k) submission K231570 - a primary government source.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf23/K231570.pdf",
+        "confidence": "high"
+      }
+    ],
+    "outreach_hook": "Named on the K231570 submission personally - she owns the file that FDA reads, and the EU version of the same file.",
+    "notes": "Found via the FDA 510(k) database, which names regulatory contacts on a primary source. No economic buyer identified yet - at ~60 staff this is likely the CEO. Access score is capped until that is resolved."
+  },
+  {
+    "company": "Owlstone Medical",
+    "domain": "owlstonemedical.com",
+    "hq": "Cambridge, UK",
+    "headcount": 120,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Develops and manufactures Breath Biopsy diagnostic products.",
+        "url": "https://www.owlstonemedical.com/about/team/"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~120 staff. ESTIMATE - verify against Companies House.",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/04955647"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "Diagnostic products under an ISO 13485 / FDA 21 CFR 820 quality system. CLASS UNCONFIRMED - must verify IVDR class before qualifying.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Commercial diagnostic products with an established QMS.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_ivdr_b",
+        "evidence": "Breath-based diagnostics - IVDR class assumed B pending confirmation.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "~120 staff.",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/04955647"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "ISO 13485:2016 and FDA 21 CFR 820 quality system introduced under a dedicated QA/RA Manager.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "Operates to both ISO 13485 and FDA 21 CFR 820.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team"
+      },
+      {
+        "id": "champion_identified",
+        "evidence": "Jon Charters, QA/RA Manager.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team"
+      }
+    ],
+    "people": [
+      {
+        "name": "Jon Charters",
+        "title": "QA/RA Manager",
+        "role": "champion",
+        "evidence": "Appointed QA/RA Manager, focused on introducing ISO 13485:2016 and FDA 21 CFR 820.",
+        "url": "https://www.cambridgenetwork.co.uk/news/owlstone-medical-strengthens-management-team",
+        "confidence": "medium"
+      }
+    ],
+    "outreach_hook": "Standing up ISO 13485 and 21 CFR 820 in parallel - the point where document control either scales or silently drifts.",
+    "notes": "WEAKEST ACCOUNT IN THIS BATCH. IVDR classification is unconfirmed and the notified_body_exposure gate turns on it: if the products are IVDR Class A self-certified, this account fails the gate outright. Confirm before any outreach. Appointment date also unconfirmed."
+  },
+  {
+    "company": "Xeltis",
+    "domain": "xeltis.com",
+    "hq": "Eindhoven, Netherlands",
+    "headcount": 80,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of restorative cardiovascular implants.",
+        "url": "https://xeltis.com/about/"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~80 staff. ESTIMATE - verify.",
+        "url": "https://xeltis.com/about/"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "Implantable cardiovascular devices (heart valves, vascular access) - Class III.",
+        "url": "https://xeltis.com/about/"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Running clinical programmes toward approval.",
+        "url": "https://xeltis.com/about/"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iii",
+        "evidence": "Implantable restorative heart valve and vascular access devices.",
+        "url": "https://xeltis.com/about/"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "~80 staff.",
+        "url": "https://xeltis.com/about/"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "EIB-backed plus venture funding.",
+        "url": "https://www.eib.org/en/projects/all/20210220"
+      },
+      {
+        "id": "device_families_2_to_4",
+        "evidence": "Multiple implant programmes across heart valve and vascular access.",
+        "url": "https://xeltis.com/about/"
+      },
+      {
+        "id": "clinical_study_completing_le_12m",
+        "age_days": 300,
+        "evidence": "Advancing heart valve clinical programmes. Date conservative - verify against clinicaltrials.gov.",
+        "url": "https://www.tue.nl/en/research/research-areas/engineering-health/xeltis-to-advance-heart-valve-programs"
+      },
+      {
+        "id": "economic_buyer_named_and_verified",
+        "evidence": "Eliane Schutte, CEO, personally regulatory-literate (ex-VP Regulatory Affairs and EU Operations at IsoTis Orthobiologics).",
+        "url": "https://xeltis.com/about/"
+      }
+    ],
+    "people": [
+      {
+        "name": "Eliane Schutte",
+        "title": "Chief Executive Officer",
+        "role": "economic_buyer",
+        "evidence": "CEO since 2018; previously Chief Development Officer leading clinical trials and regulatory matters, and VP Regulatory Affairs & EU Operations at IsoTis Orthobiologics. No separate RA/QA leader is listed publicly.",
+        "url": "https://xeltis.com/about/",
+        "confidence": "high"
+      },
+      {
+        "name": "Paulo Neves",
+        "title": "Chief Medical Officer",
+        "role": "champion",
+        "evidence": "CMO, cardiac surgeon - owns clinical evaluation content.",
+        "url": "https://xeltis.com/about/",
+        "confidence": "high"
+      }
+    ],
+    "outreach_hook": "A regulatory-native CEO running Class III implant programmes with no publicly named RA leader underneath her - she is both the buyer and the bottleneck.",
+    "notes": "Textbook archetype A: the CEO is the economic buyer and happens to be an ex-VP of Regulatory Affairs, so the pitch must be technically credible from the first sentence. Absence of a named RA lead is either an outsourced function or an unfilled gap - worth discovering on the call."
+  },
+  {
+    "company": "Vitestro",
+    "domain": "vitestro.com",
+    "hq": "Utrecht, Netherlands",
+    "headcount": 80,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of the Aletta autonomous blood drawing device; holds the CE mark in its own name.",
+        "url": "https://vitestro.com/vitestro-achieves-ce-marking-for-autonomous-blood-drawing-device/"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~80 staff. ESTIMATE - verify.",
+        "url": "https://vitestro.com/about-us/"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "CE marked autonomous blood collection robot - Class IIb device requiring Notified Body review.",
+        "url": "https://www.prnewswire.com/news-releases/vitestro-achieves-ce-marking-for-autonomous-blood-drawing-device-302231939.html"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "CE marked device on market.",
+        "url": "https://vitestro.com/vitestro-achieves-ce-marking-for-autonomous-blood-drawing-device/"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iib",
+        "evidence": "CE marked autonomous blood drawing device combining AI, ultrasound imaging and robotics.",
+        "url": "https://vitestro.com/news/vitestro-unveils-autonomous-blood-drawing-device-combining-artificial-intelligence-ultrasound-imaging-and-robotics/"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "AI and ultrasound-guided autonomous device - heavy IEC 62304 and AI Act documentation load.",
+        "url": "https://vitestro.com/news/vitestro-unveils-autonomous-blood-drawing-device-combining-artificial-intelligence-ultrasound-imaging-and-robotics/"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "Holds an active CE certificate obtained via a Notified Body.",
+        "url": "https://vitestro.com/vitestro-achieves-ce-marking-for-autonomous-blood-drawing-device/"
+      },
+      {
+        "id": "headcount_40_79",
+        "evidence": "~80 staff.",
+        "url": "https://vitestro.com/about-us/"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "AI-driven autonomous device.",
+        "url": "https://vitestro.com/about-us/"
+      },
+      {
+        "id": "vc_backed_or_recent_raise",
+        "evidence": "VC-backed Dutch medtech scale-up.",
+        "url": "https://vitestro.com/about-us/"
+      },
+      {
+        "id": "ra_qa_req_open",
+        "age_days": 25,
+        "evidence": "Live vacancy: Senior Regulatory Affairs Officer at Vitestro.",
+        "url": "https://startup.jobs/senior-regulatory-affairs-officer-vitestro-8754077"
+      },
+      {
+        "id": "new_market_entry_us_eu_or_eu_us",
+        "age_days": 250,
+        "evidence": "CE marked in EU and listed with MTEC (US medical technology consortium), indicating US market ambition. Conservative age; verify.",
+        "url": "https://mtec-sc.org/life-sciences/vitestro-b-v"
+      }
+    ],
+    "people": [
+      {
+        "name": "Toon Overbeeke",
+        "title": "Co-founder & CEO",
+        "role": "economic_buyer",
+        "evidence": "Co-founder and CEO; at ~80 staff with no publicly named RA leader, budget authority sits with the CEO (archetype A/B boundary).",
+        "url": "https://vitestro.com/about-us/",
+        "confidence": "medium"
+      },
+      {
+        "name": "(role) Senior Regulatory Affairs Officer",
+        "title": "Senior Regulatory Affairs Officer - VACANT, req live",
+        "role": "champion",
+        "evidence": "Open req. No RA leader named publicly - the hiring manager on this req is the person to identify.",
+        "url": "https://startup.jobs/senior-regulatory-affairs-officer-vitestro-8754077",
+        "confidence": "high",
+        "person_found": false
+      }
+    ],
+    "outreach_hook": "Recruiting a Senior RA Officer for a CE-marked autonomous AI robot - they are trying to buy RA capacity in people right now.",
+    "notes": "Class IIb autonomous AI device is an unusually heavy documentation profile for an 80-person company. No named RA leader found - identify the hiring manager on the open req first."
+  },
+  {
+    "company": "icometrix",
+    "domain": "icometrix.com",
+    "hq": "Leuven, Belgium",
+    "headcount": 100,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of icobrain and icompanion; named submitter on FDA 510(k) K192130.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192130.pdf"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~100 staff. ESTIMATE - verify.",
+        "url": "https://be.linkedin.com/company/icometrix"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "icompanion received CE marking under EU MDR; icobrain FDA cleared.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192130.pdf"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "MDR CE marked and FDA cleared products on market.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192130.pdf"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iia",
+        "evidence": "AI neuroimaging analysis software - SaMD, CE marked under MDR.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192130.pdf"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Pure AI software medical device portfolio.",
+        "url": "https://be.linkedin.com/company/icometrix"
+      },
+      {
+        "id": "dual_regime_eu_and_us",
+        "evidence": "MDR CE mark plus FDA 510(k) clearance - two technical files for the same software.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192130.pdf"
+      },
+      {
+        "id": "device_families_2_to_4",
+        "evidence": "icobrain and icompanion product lines.",
+        "url": "https://be.linkedin.com/company/icometrix"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "~100 staff.",
+        "url": "https://be.linkedin.com/company/icometrix"
+      },
+      {
+        "id": "active_nb_or_cert",
+        "evidence": "Holds an MDR CE certificate issued by a Notified Body.",
+        "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf19/K192130.pdf"
+      },
+      {
+        "id": "ai_in_product_or_adoption",
+        "evidence": "AI-native neuroimaging company.",
+        "url": "https://be.linkedin.com/company/icometrix"
+      },
+      {
+        "id": "ra_qa_req_open",
+        "age_days": 25,
+        "evidence": "Live vacancy: Regulatory Affairs Manager at icometrix.",
+        "url": "https://joobs.be/en/company/AwlfIjoa3SBcwNKSeJHF"
+      },
+      {
+        "id": "ra_qa_req_open",
+        "age_days": 25,
+        "evidence": "Live vacancy: Quality Engineer at icometrix - two concurrent RA/QA reqs.",
+        "url": "https://joobs.be/en/company/AwlfIjoa3SBcwNKSeJHF"
+      }
+    ],
+    "people": [
+      {
+        "name": "Wim Van Hecke",
+        "title": "Founder & CEO",
+        "role": "economic_buyer",
+        "evidence": "Founder and CEO of icometrix.",
+        "url": "https://be.linkedin.com/company/icometrix",
+        "confidence": "medium"
+      },
+      {
+        "name": "(role) Regulatory Affairs Manager",
+        "title": "Regulatory Affairs Manager - VACANT, req live",
+        "role": "champion",
+        "evidence": "Open req alongside a Quality Engineer req. Two concurrent RA/QA openings at ~100 staff signals real capacity strain.",
+        "url": "https://joobs.be/en/company/AwlfIjoa3SBcwNKSeJHF",
+        "confidence": "high",
+        "person_found": false
+      }
+    ],
+    "outreach_hook": "Two concurrent RA/QA reqs open while maintaining an MDR CE mark and an FDA clearance on the same software - capacity strain with a dual-regime file.",
+    "notes": "Two simultaneous openings is a stronger signal than one senior opening. No RA leader named publicly; identify the hiring manager."
+  },
+  {
+    "company": "Perspectum",
+    "domain": "perspectum.com",
+    "hq": "Oxford, UK",
+    "headcount": 200,
+    "researched_at": "2026-09-11",
+    "gates": {
+      "legal_manufacturer": {
+        "pass": true,
+        "evidence": "Legal manufacturer of LiverMultiScan and related imaging software.",
+        "url": "https://www.perspectum.com/our-company/board-of-directors"
+      },
+      "headcount_in_band": {
+        "pass": true,
+        "evidence": "~200 staff. ESTIMATE - verify against Companies House.",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08219473/officers"
+      },
+      "notified_body_exposure": {
+        "pass": true,
+        "evidence": "CE marked and FDA cleared imaging software (SaMD). CLASS UNCONFIRMED - verify.",
+        "url": "https://careers.perspectum.com/Department/Oxford"
+      },
+      "technical_file_exists": {
+        "pass": true,
+        "evidence": "Commercial certified software products.",
+        "url": "https://careers.perspectum.com/Department/Oxford"
+      }
+    },
+    "signals": [
+      {
+        "id": "class_eu_iia",
+        "evidence": "Quantitative MRI analysis software - SaMD. Class assumed IIa pending confirmation.",
+        "url": "https://careers.perspectum.com/Department/Oxford"
+      },
+      {
+        "id": "software_samd_or_ai",
+        "evidence": "Imaging analysis software portfolio.",
+        "url": "https://careers.perspectum.com/Department/Oxford"
+      },
+      {
+        "id": "headcount_80_250",
+        "evidence": "~200 staff.",
+        "url": "https://find-and-update.company-information.service.gov.uk/company/08219473/officers"
+      },
+      {
+        "id": "ra_qa_req_open",
+        "age_days": 25,
+        "evidence": "Live vacancy: Quality Assurance Regulatory Affairs (QARA) Coordinator at Perspectum Oxford.",
+        "url": "https://careers.perspectum.com/Department/Oxford"
+      },
+      {
+        "id": "ra_qa_fte_ratio_ge_5pct",
+        "evidence": "Dedicated QARA function with a Functional Quality Lead and a coordinator layer.",
+        "url": "https://theorg.com/org/perspectum/offices/hq"
+      }
+    ],
+    "people": [
+      {
+        "name": "Jason Pearce",
+        "title": "Functional Quality Lead",
+        "role": "champion",
+        "evidence": "Functional Quality Lead at Perspectum.",
+        "url": "https://theorg.com/org/perspectum/offices/hq",
+        "confidence": "low"
+      },
+      {
+        "name": "(role) QARA Coordinator",
+        "title": "QA Regulatory Affairs Coordinator - VACANT, req live",
+        "role": "champion",
+        "evidence": "Open QARA Coordinator req on Perspectum's own careers site.",
+        "url": "https://careers.perspectum.com/Department/Oxford",
+        "confidence": "high",
+        "person_found": false
+      }
+    ],
+    "outreach_hook": "Hiring a QARA Coordinator - the role companies open when documentation volume has outgrown the current team.",
+    "notes": "Weakest people data of the batch: no senior RA leader identified and Jason Pearce is low-confidence single-source. Device class unconfirmed. Qualify further before outreach."
+  }
+]
