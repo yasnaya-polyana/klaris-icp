@@ -1,0 +1,408 @@
+<title>Klaris Prospect Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --paper:#F4F6F8; --surface:#FFFFFF; --surface-2:#EDF1F4;
+  --ink:#111A22; --ink-2:#3D4B57; --ink-3:#6B7B88;
+  --rule:#D6DEE4; --rule-2:#E8EDF1;
+  --accent:#1A6A66; --accent-soft:#DCEBE9;
+  --sev-a:#A8321C; --sev-b:#B5711A; --sev-c:#2F6B8F; --sev-d:#7D8993;
+  --sev-a-bg:#F7E2DD; --sev-b-bg:#F8EBD8; --sev-c-bg:#DEEAF2; --sev-d-bg:#E7EBEE;
+  --shadow:0 1px 2px rgba(17,26,34,.06),0 8px 24px -12px rgba(17,26,34,.18);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0C1218; --surface:#141D25; --surface-2:#1B262F;
+  --ink:#E8EEF2; --ink-2:#AFBECA; --ink-3:#7B8B98;
+  --rule:#27343E; --rule-2:#1E2A33;
+  --accent:#5FBDB5; --accent-soft:#15302F;
+  --sev-a:#E8836B; --sev-b:#DDA45C; --sev-c:#7FB4D6; --sev-d:#8A98A3;
+  --sev-a-bg:#2E1A16; --sev-b-bg:#2E2414; --sev-c-bg:#16262F; --sev-d-bg:#1C242A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}}
+:root[data-theme="dark"]{
+  --paper:#0C1218; --surface:#141D25; --surface-2:#1B262F;
+  --ink:#E8EEF2; --ink-2:#AFBECA; --ink-3:#7B8B98;
+  --rule:#27343E; --rule-2:#1E2A33;
+  --accent:#5FBDB5; --accent-soft:#15302F;
+  --sev-a:#E8836B; --sev-b:#DDA45C; --sev-c:#7FB4D6; --sev-d:#8A98A3;
+  --sev-a-bg:#2E1A16; --sev-b-bg:#2E2414; --sev-c-bg:#16262F; --sev-d-bg:#1C242A;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);
+}
+*{box-sizing:border-box}
+body{
+  background:var(--paper); color:var(--ink);
+  font-family:"IBM Plex Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-size:15px; line-height:1.55; margin:0;
+  padding-block:0 64px; padding-left:20px; padding-right:20px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1000px;margin:0 auto}
+h1,h2,h3{font-family:Spectral,Georgia,serif;font-weight:600;text-wrap:balance;margin:0}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:2px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+
+/* ---------- masthead ---------- */
+header{padding-block:44px 26px;border-bottom:2px solid var(--ink)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-.015em}
+.standfirst{font-family:Spectral,Georgia,serif;font-size:18px;line-height:1.5;
+  color:var(--ink-2);max-width:60ch;margin:14px 0 0}
+.meta{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:20px;
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);letter-spacing:.03em}
+.meta b{color:var(--ink-2);font-weight:500}
+
+/* ---------- model strip ---------- */
+.model{display:grid;grid-template-columns:1.15fr 1fr;gap:0;border:1px solid var(--rule);
+  border-radius:3px;background:var(--surface);margin-top:28px;overflow:hidden}
+.model>div{padding:20px 22px}
+.model>div+div{border-left:1px solid var(--rule)}
+.model h3{font-size:12px;font-family:"IBM Plex Mono",monospace;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.formula{font-family:"IBM Plex Mono",monospace;font-size:13.5px;line-height:1.9;color:var(--ink)}
+.formula em{font-style:normal;color:var(--accent);font-weight:600}
+.gates{margin:0;padding:0;list-style:none;font-size:13.5px;color:var(--ink-2)}
+.gates li{padding-left:18px;position:relative;margin-bottom:7px;line-height:1.45}
+.gates li::before{content:"▸";position:absolute;left:0;color:var(--accent);font-size:11px;top:1px}
+.gates code{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--ink);
+  background:var(--surface-2);padding:1px 4px;border-radius:2px}
+
+/* ---------- tier filter ---------- */
+.control{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;
+  margin:34px 0 18px;padding-bottom:12px;border-bottom:1px solid var(--rule)}
+.control h2{font-size:22px;margin-right:auto}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+  border:1px solid var(--rule);background:var(--surface);color:var(--ink-2);
+  padding:5px 11px;border-radius:2px;cursor:pointer;transition:all .12s}
+.chip:hover{border-color:var(--ink-3);color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* ---------- register ---------- */
+.register{display:flex;flex-direction:column;gap:14px}
+.entry{display:grid;grid-template-columns:46px 1fr;background:var(--surface);
+  border:1px solid var(--rule);border-radius:3px;box-shadow:var(--shadow);overflow:hidden}
+.rank{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding-top:18px;gap:9px;background:var(--surface-2);border-right:1px solid var(--rule)}
+.rank .n{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600;color:var(--ink-2)}
+.rank .stripe{width:4px;flex:1;min-height:34px;border-radius:2px;margin-bottom:18px}
+.body{padding:17px 20px 18px}
+.who{display:flex;flex-wrap:wrap;align-items:baseline;gap:9px}
+.who h3{font-size:19px;letter-spacing:-.01em}
+.role{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;padding:2.5px 7px;border-radius:2px;font-weight:500;
+  background:var(--accent-soft);color:var(--accent);border:1px solid transparent}
+.role.champ{background:transparent;color:var(--ink-3);border-color:var(--rule)}
+.conf{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--ink-3)}
+.conf b{color:var(--accent);font-weight:600}
+.conf.med b{color:var(--sev-b)}
+.conf.low b{color:var(--sev-d)}
+.title-line{font-size:14.5px;color:var(--ink-2);margin:5px 0 0}
+.title-line strong{color:var(--ink);font-weight:600}
+
+.scores{display:flex;flex-wrap:wrap;gap:6px 20px;margin:13px 0;padding:11px 0;
+  border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);align-items:center}
+.tierbadge{font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;
+  letter-spacing:.08em;padding:3px 9px;border-radius:2px}
+.sc{display:flex;align-items:center;gap:7px;font-family:"IBM Plex Mono",monospace;
+  font-size:11px;color:var(--ink-3);letter-spacing:.04em}
+.sc b{color:var(--ink);font-weight:600;font-size:12.5px}
+.bar{width:52px;height:4px;background:var(--surface-2);border-radius:2px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent);border-radius:2px}
+
+.hook{font-family:Spectral,Georgia,serif;font-size:15.5px;line-height:1.55;
+  color:var(--ink);margin:0;padding-left:13px;border-left:2px solid var(--accent)}
+.hook b{font-weight:600}
+.note{font-size:13px;color:var(--ink-3);margin:11px 0 0;line-height:1.5}
+.note b{color:var(--ink-2);font-weight:500}
+.src{margin-top:11px;font-family:"IBM Plex Mono",monospace;font-size:11px}
+
+/* ---------- secondary tables ---------- */
+section{margin-top:44px}
+section>h2{font-size:22px;padding-bottom:11px;border-bottom:1px solid var(--rule)}
+section>p.lede{color:var(--ink-2);font-size:14.5px;max-width:64ch;margin:13px 0 0}
+.tbl-wrap{overflow-x:auto;margin-top:16px;border:1px solid var(--rule);border-radius:3px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--surface);min-width:520px}
+th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--ink-3);text-align:left;font-weight:500;
+  padding:11px 14px;border-bottom:1px solid var(--rule);background:var(--surface-2)}
+td{padding:11px 14px;border-bottom:1px solid var(--rule-2);color:var(--ink-2);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--ink);font-weight:600}
+td.mono{font-size:12.5px}
+
+.warn{background:var(--sev-b-bg);border:1px solid var(--rule);border-left:3px solid var(--sev-b);
+  border-radius:3px;padding:17px 20px;margin-top:16px}
+.warn h3{font-size:15px;margin-bottom:8px;font-family:"IBM Plex Sans",sans-serif;font-weight:600}
+.warn p{margin:0;font-size:13.5px;color:var(--ink-2);line-height:1.55}
+.warn p+p{margin-top:9px}
+
+.calib{background:var(--surface);border:1px solid var(--rule);border-radius:3px;
+  padding:22px 24px;margin-top:16px}
+.capture{display:grid;grid-template-columns:1fr auto 92px;gap:3px 12px;
+  align-items:center;margin-top:15px;font-family:"IBM Plex Mono",monospace;font-size:11.5px}
+.capture span{color:var(--ink-2)}
+.capture b{color:var(--ink);font-weight:600;text-align:right}
+.capture .cbar{height:5px;background:var(--surface-2);border-radius:2px;overflow:hidden}
+.capture .cbar i{display:block;height:100%;background:var(--accent);border-radius:2px}
+.capture .cbar.zero i{background:var(--sev-a)}
+
+footer{margin-top:52px;padding-top:20px;border-top:2px solid var(--ink);
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-3);line-height:1.8}
+footer b{color:var(--ink-2);font-weight:500}
+
+@media (max-width:720px){
+  .model{grid-template-columns:1fr}
+  .model>div+div{border-left:none;border-top:1px solid var(--rule)}
+  .entry{grid-template-columns:34px 1fr}
+  .rank .n{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="wrap">
+<header>
+  <p class="eyebrow">Klaris.ai · ICP v1.0 · Call list</p>
+  <h1>Klaris Prospect Register</h1>
+  <p class="standfirst">Twelve named people at medical device manufacturers who own the technical
+  file — scored against the ICP model, ranked by account, and sourced line by line.</p>
+  <div class="meta">
+    <span><b>Researched</b> 2026-09-11</span>
+    <span><b>Method</b> public sources + Sales Navigator</span>
+    <span><b>Screened</b> 13 accounts · 21 named individuals</span>
+    <span><b>Band</b> 30–400 staff · EU MDR/IVDR first</span>
+  </div>
+
+  <div class="model">
+    <div>
+      <h3>Composite</h3>
+      <p class="formula">
+        <em>0.40</em> × Fit &nbsp;+&nbsp; <em>0.45</em> × Trigger &nbsp;+&nbsp; <em>0.15</em> × Access<br>
+        <span style="color:var(--ink-3);font-size:12.5px">Trigger leads: at pre-seed you cannot
+        manufacture need, only catch it in flight.</span>
+      </p>
+    </div>
+    <div>
+      <h3>Hard gates — fail one, disqualified</h3>
+      <ul class="gates">
+        <li>Legal manufacturer — owns the technical file</li>
+        <li>Headcount <code>30–400</code></li>
+        <li>Notified Body exposure — EU <code>IIa+</code>, <code>Is/Im/Ir</code>, IVDR <code>B+</code>, FDA <code>II+</code></li>
+        <li>Past design freeze — a technical file exists</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<div class="control">
+  <h2>The twelve</h2>
+  <button class="chip" data-f="all" aria-pressed="true">All 12</button>
+  <button class="chip" data-f="A" aria-pressed="false">Tier A · 3</button>
+  <button class="chip" data-f="B" aria-pressed="false">Tier B · 3</button>
+  <button class="chip" data-f="C" aria-pressed="false">Tier C · 6</button>
+</div>
+
+<div class="register" id="reg"></div>
+
+<section>
+  <h2>Reserves</h2>
+  <p class="lede">Verified people at accounts that scored lower. Padharia is the highest-confidence
+  contact found anywhere in this exercise — she is named on a primary FDA record.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Person</th><th>Title</th><th>Company</th><th>Conf.</th><th>Why they matter</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Veronica Padharia</strong></td><td>Principal Regulatory Affairs</td><td>NICO.LAB · NL</td><td class="mono">HIGH</td><td>Named on FDA 510(k) <span class="mono">K231570</span> — a primary government record</td></tr>
+      <tr><td><strong>Eliane Schutte</strong></td><td>Chief Executive Officer</td><td>Xeltis · NL</td><td class="mono">HIGH</td><td>Regulatory-native CEO (ex-VP RA, IsoTis) running Class III implants with no RA lead beneath her</td></tr>
+      <tr><td><strong>Neil Daly</strong></td><td>Chief Executive Officer</td><td>Skin Analytics · UK</td><td class="mono">HIGH</td><td>Co-signer above Hamlyn at the top of the ACV band</td></tr>
+      <tr><td><strong>Jon Charters</strong></td><td>QA/RA Manager</td><td>Owlstone Medical · UK</td><td class="mono">MED</td><td>Standing up ISO 13485 and 21 CFR 820 in parallel</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Open reqs — target the hiring manager</h2>
+  <p class="lede">Five live vacancies with no incumbent. Whoever is named as hiring manager on an RA
+  req is almost always the RA budget owner: someone who can hire a €70k FTE can approve €15–60k of
+  software. The req also states who it reports to, which hands you the level above for free.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Vacant role</th><th>Company</th><th>Why it signals</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Senior Manager, Regulatory Affairs</strong></td><td>ONWARD Medical</td><td>Live on their own careers portal, against +33.9% headcount growth</td></tr>
+      <tr><td><strong>RA Manager <em>and</em> Quality Engineer</strong></td><td>icometrix</td><td>Two concurrent openings — stronger than one senior opening</td></tr>
+      <tr><td><strong>Senior Regulatory Affairs Officer</strong></td><td>Vitestro</td><td>CE-marked Class IIb autonomous AI robot, ~80 staff</td></tr>
+      <tr><td><strong>QARA Coordinator</strong></td><td>Perspectum</td><td>The role opened when documentation outgrows the team</td></tr>
+      <tr><td><strong>Head of Clinical Safety &amp; Governance</strong></td><td>Skin Analytics</td><td>Governance load outgrowing a Class III autonomous device</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section>
+  <h2>Screened out</h2>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Excluded</th><th>Gate</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Gleamer</strong> · Paris</td><td class="mono">legal_manufacturer</td><td>Acquired by RadNet for $269M — no longer an independent legal manufacturer</td></tr>
+      <tr><td><strong>Edwards, J&amp;J, Medtronic, Roche, AstraZeneca, Alcon, B.Braun</strong></td><td class="mono">headcount_in_band</td><td>Far outside 30–400. All surfaced via conference speaker lists — see the calibration note</td></tr>
+      <tr><td><strong>TÜV SÜD</strong></td><td class="mono">legal_manufacturer</td><td>Notified Body, not a manufacturer</td></tr>
+      <tr><td><strong>enmodes, Evnia</strong></td><td class="mono">legal_manufacturer</td><td>Development and consultancy firms — they belong to the consultancy channel segment, not the direct model</td></tr>
+    </tbody>
+  </table></div>
+
+  <div class="warn">
+    <h3>Do not contact until verified</h3>
+    <p>Four names surfaced only from data brokers, and the Brainomix names are <em>contradicted by
+    the company's own team page</em>, which lists no QA/RA leader at all:
+    <strong>Gwilym Owen</strong> and <strong>Andrew Newey</strong> (Brainomix),
+    <strong>Phillip Ross</strong> (Brainomix or Perspectum — sources conflict),
+    <strong>Bram Schermers</strong> (Sirius Medical; named on FDA filings K222643/K223682 but the
+    title would not extract).</p>
+    <p>Brainomix otherwise fits well — ~100 staff, Oxford, AI SaMD, CE and FDA. Worth one Sales
+    Navigator check to resolve who actually holds the role.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Read this before trusting a score</h2>
+  <p class="lede">The first run put <em>all thirteen</em> accounts in Tier D. That was the model
+  working, not failing — the thresholds had been written as if evidence were complete. Measured
+  capture rate per signal family, averaged across the cohort:</p>
+
+  <div class="calib">
+    <div class="capture" id="cap"></div>
+    <p class="note" style="margin-top:18px"><b>Two families are effectively unreachable from public
+    sources today</b>, and together they carry 40 of the 100 trigger points. Deadline pressure needs
+    Notified Body certificate data (EUDAMED); prior regulatory pain needs systematic FDA warning
+    letter, Form 483 and recall mining. Both are automatable and both are worth building next.</p>
+    <p class="note"><b>Two fixes shipped.</b> Dual threshold sets — one calibrated to what public
+    research actually yields, one strict for when CRM or enrichment data exists. And a coverage
+    figure on every result, so a low score caused by thin research is visibly distinct from a low
+    score caused by a poor account.</p>
+    <p class="note" style="color:var(--ink);font-weight:500;margin-top:13px">The ordering this model
+    produces is trustworthy. The absolute cut-points are not, yet — recalibrate after ~50 accounts,
+    and again once there is closed-won and closed-lost data to fit against.</p>
+  </div>
+</section>
+
+<section>
+  <h2>What worked, and what didn't</h2>
+  <p class="lede">Two discovery tactics were tested against reality in the course of building this list.</p>
+  <div class="tbl-wrap"><table>
+    <thead><tr><th>Tactic</th><th>Verdict</th><th>Evidence</th></tr></thead>
+    <tbody>
+      <tr><td><strong>FDA 510(k) database</strong></td><td class="mono" style="color:var(--accent)">PROMOTE</td><td>Submission records name the regulatory contact <em>and their title</em> on a primary, government-hosted document. This is how Padharia was found. The single best source in the exercise.</td></tr>
+      <tr><td><strong>Conference speaker lists</strong></td><td class="mono" style="color:var(--sev-b)">DOWNGRADE</td><td>The MedTech Summit roster returned Edwards, J&amp;J, Medtronic, Roche and AstraZeneca — every one fails the headcount gate. Good for market intelligence, low yield for a 30–400 ICP.</td></tr>
+      <tr><td><strong>Find the PRRC</strong> (EU MDR Art. 15)</td><td class="mono" style="color:var(--ink-3)">UNTESTED</td><td>Every manufacturer must name a person carrying <em>personal legal accountability</em> for technical documentation conformity — exactly what Klaris checks. Needs Sales Navigator title search to work at scale.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<footer>
+  <b>Model</b> gates → fit /100 → trigger /100 (decays ×1.0 &lt;90d, ×0.7, ×0.4, ×0.1 &gt;1yr) → access /40<br>
+  <b>Evidence bar</b> every signal carries a source URL or the scorer drops it<br>
+  <b>Caveat</b> headcount is an estimate at 9 of 13 accounts and headcount is a hard gate — confirm before outreach
+</footer>
+</div>
+
+<script>
+const P=[
+ {r:1,n:"James Hamlyn",t:"VP Quality &amp; Regulatory Affairs",c:"Skin Analytics",loc:"London, UK",role:"Economic buyer",champ:0,conf:"high",tier:"A",comp:36.1,fit:64,trg:9.2,acc:17,cov:67,
+  hook:"A <b>Class III autonomous AI device</b> — the world's first permitted to make clinical decisions without human review. The technical file <i>is</i> the defensibility, and every change re-opens it.",
+  note:"100 staff, doubled from 50 in 2025 on a £15M Series B. DERM holds an EU MDR Class III CE mark plus a Class IIa UKCA mark. Hamlyn has 12+ years in device RA/QA with a stated interest in SaMD. A live req for a Head of Clinical Safety &amp; Governance says the governance load is already outgrowing the team.",
+  src:"skin-analytics.com/about-us",url:"https://skin-analytics.com/about-us/"},
+ {r:2,n:"Shari O'Quinn",t:"Chief Clinical, Regulatory and Quality Officer",c:"ONWARD Medical",loc:"Eindhoven, NL",role:"Economic buyer",champ:0,conf:"medium",tier:"A",comp:35.7,fit:62,trg:9.2,acc:18,cov:56,
+  hook:"They are <b>hiring a Senior Manager, Regulatory Affairs right now</b>. Open on the req, not on the product.",
+  note:"137 FTE and <b>+33.9% headcount in a single year</b> — documentation drift scales with how fast a team grows. Class III implantable neurostimulation, Euronext-listed, dual EU/US. RA/QA sitting at C-level in a 137-person company is itself strong evidence of real regulatory investment.",
+  src:"careers.onwd.com — live req",url:"https://careers.onwd.com/senior-manager-regulatory-affairs/en/apply"},
+ {r:3,n:"Erika Ross, PhD",t:"VP, Global Clinical &amp; Regulatory",c:"ONWARD Medical",loc:"Eindhoven, NL",role:"Champion",champ:1,conf:"medium",tier:"A",comp:35.7,fit:62,trg:9.2,acc:18,cov:56,
+  hook:"The hands-on route into ONWARD. Start here to learn the real state of the file, then take it to O'Quinn for signature.",
+  note:"Took global leadership of ONWARD's clinical and regulatory activities in January 2023.",
+  src:"appointment announcement",url:"https://www.compuserve.com/politics/story/0022/20230123/8734328.htm"},
+ {r:4,n:"Francis Kim",t:"Chief Regulatory and Quality Officer",c:"Nyxoah",loc:"Mont-Saint-Guibert, BE",role:"Economic buyer",champ:0,conf:"high",tier:"B",comp:32.8,fit:65,trg:0,acc:18,cov:56,
+  hook:"Genio is <b>CE marked and FDA approved</b> — two full technical files describing one device. Sell cross-regime consistency, not gap-finding.",
+  note:"153.7 FTE, verified in the 20-F. A mature RA function hears \"we find your gaps\" as an insult; it hears \"your EU and US files have drifted apart\" as a real question. Kim has 25+ years in devices and life sciences.",
+  src:"leadership announcement",url:"https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html"},
+ {r:5,n:"Nathalie Gilat",t:"VP Regulatory Affairs / GM Israel",c:"Nyxoah",loc:"Israel",role:"Champion",champ:1,conf:"medium",tier:"B",comp:32.8,fit:65,trg:0,acc:18,cov:56,
+  hook:"At Nyxoah since 2014 — institutional memory for exactly where the EU and US documentation diverged.",
+  note:"14+ years in global clinical and regulatory affairs.",
+  src:"leadership announcement",url:"https://www.globenewswire.com/news-release/2023/11/28/2787378/0/en/Nyxoah-Strengthens-its-Executive-Leadership-Team.html"},
+ {r:6,n:"Wim Van Hecke",t:"Founder &amp; CEO",c:"icometrix",loc:"Leuven, BE",role:"Economic buyer",champ:0,conf:"medium",tier:"B",comp:29.2,fit:55,trg:16,acc:0,cov:56,
+  hook:"<b>Two concurrent RA/QA reqs open</b> — an RA Manager and a Quality Engineer. Two simultaneous openings is a stronger capacity signal than one senior one.",
+  note:"~100 staff. icobrain and icompanion carry an MDR CE mark and an FDA 510(k) on the same software. No RA leader is named publicly — identify the hiring manager on that req, because that is the budget owner.",
+  src:"joobs.be — live reqs",url:"https://joobs.be/en/company/AwlfIjoa3SBcwNKSeJHF"},
+ {r:7,n:"Elise Lagacherie",t:"Quality &amp; Regulatory Affairs Director",c:"Quantum Surgical",loc:"Montpellier, FR",role:"Economic buyer",champ:0,conf:"medium",tier:"C",comp:27.2,fit:54,trg:4,acc:10,cov:56,
+  hook:"Carries the <b>best single trigger in the entire batch</b>: a field safety warning on Epione software in Europe — precisely when documentation and labelling consistency gets audited line by line.",
+  note:"CE-marked Class IIb robotic tumour-ablation system. <b>Confirm the date and scope of that safety action first.</b> If it is recent, she moves to the top of the whole list.",
+  src:"MassDevice — safety warning",url:"https://www.massdevice.com/quantum-surgical-warns-epione-software-europe/"},
+ {r:8,n:"Josep Hortigüela",t:"VP of Quality Assurance and Regulatory Affairs",c:"Quibim",loc:"Valencia, ES",role:"Economic buyer",champ:0,conf:"high",tier:"C",comp:26.6,fit:57,trg:0,acc:10,cov:44,
+  hook:"Pure SaMD: every model update touches <b>IEC 62304</b>, the risk file and the clinical evaluation at once — and the AI Act stacks on top.",
+  note:"~130 staff, AI imaging biomarkers under both CE and FDA. Corroborated across two independent sources.",
+  src:"The Org · corroborated on LinkedIn",url:"https://theorg.com/org/quibim/org-chart/josep-hortiguela"},
+ {r:9,n:"Paul Cornelison",t:"VP Regulatory, Quality &amp; Clinical Affairs",c:"CorWave",loc:"Paris, FR",role:"Economic buyer",champ:0,conf:"medium",tier:"C",comp:25.7,fit:42,trg:4.8,acc:18,cov:56,
+  hook:"A Class III implantable LVAD moving from clinical phase into industrial ramp-up — the point where the design history file meets real scrutiny for the first time.",
+  note:"~130 staff. Class III implants carry the heaviest documentation burden in the device world.",
+  src:"The Org — QA/RA team",url:"https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs"},
+ {r:10,n:"Laura Gonzalez",t:"Regulatory Affairs Associate Director",c:"CorWave",loc:"Paris, FR",role:"Champion",champ:1,conf:"medium",tier:"C",comp:25.7,fit:42,trg:4.8,acc:18,cov:56,
+  hook:"Hands-on owner of the technical file. Start here, sell through Cornelison.",
+  note:"Associate Director within CorWave's combined QA/RA function.",
+  src:"The Org — QA/RA team",url:"https://theorg.com/org/corwave/teams/quality-assurance-and-regulatory-affairs"},
+ {r:11,n:"Roni Diaz",t:"VP Clinical &amp; Regulatory Affairs",c:"Salvia BioElectronics",loc:"Eindhoven, NL",role:"Economic buyer",champ:0,conf:"medium",tier:"C",comp:24.1,fit:38,trg:4.8,acc:18,cov:56,
+  hook:"Four named QA/RA/clinical staff at roughly 60 people — a very high RA density, and strong evidence they already spend here.",
+  note:"Class III implantable bioelectronic therapy for chronic migraine, in clinical phase.",
+  src:"The Org — clinical &amp; regulatory",url:"https://theorg.com/org/salvia-bioelectronics/teams/clinical-and-product-management-team"},
+ {r:12,n:"Ger Kamminga",t:"VP of Quality",c:"Salvia BioElectronics",loc:"Eindhoven, NL",role:"Champion",champ:1,conf:"medium",tier:"C",comp:24.1,fit:38,trg:4.8,acc:18,cov:56,
+  hook:"<b>The best-shaped opportunity in the list.</b> Newly appointed, ex-Philips, inheriting a Class III implantable technical file <i>he did not write</i>. His rational first act is an independent gap assessment.",
+  note:"Previously Head of Quality DACH and Benelux at Philips; 20+ years in quality management. <b>Confirm his start date</b> — if it falls inside 90 days, the new-leader trigger goes from 1.2 points to 12 and Salvia jumps several tiers.",
+  src:"appointment announcement",url:"https://hrtoday.in/ger-kamminga-appointed-as-vice-president-of-quality-at-salvia-bioelectronics/"}
+];
+const CAP=[["company_shape",95],["regulatory_burden",63],["readiness_ai_receptivity",29],
+ ["compliance_spend_evidence",28],["hiring_qa_ra",14],["new_product_to_market",4],
+ ["document_surface_drift_risk",2],["prior_regulatory_pain",1],["deadline_pressure",0]];
+
+const sev=t=>({A:"--sev-a",B:"--sev-b",C:"--sev-c",D:"--sev-d"})[t];
+const reg=document.getElementById("reg");
+
+function draw(f){
+  reg.innerHTML="";
+  P.filter(p=>f==="all"||p.tier===f).forEach(p=>{
+    const el=document.createElement("article");
+    el.className="entry";
+    el.innerHTML=`
+      <div class="rank">
+        <span class="n">${p.r}</span>
+        <span class="stripe" style="background:var(${sev(p.tier)})"></span>
+      </div>
+      <div class="body">
+        <div class="who">
+          <h3>${p.n}</h3>
+          <span class="role${p.champ?" champ":""}">${p.role}</span>
+          <span class="conf ${p.conf==="high"?"":p.conf==="medium"?"med":"low"}">conf <b>${p.conf}</b></span>
+        </div>
+        <p class="title-line">${p.t} · <strong>${p.c}</strong> · ${p.loc}</p>
+        <div class="scores">
+          <span class="tierbadge" style="background:var(${sev(p.tier)}-bg);color:var(${sev(p.tier)})">TIER ${p.tier}</span>
+          <span class="sc">COMPOSITE <b>${p.comp.toFixed(1)}</b></span>
+          <span class="sc">FIT <b>${p.fit.toFixed(0)}</b><span class="bar"><i style="width:${p.fit}%"></i></span></span>
+          <span class="sc">TRIGGER <b>${p.trg.toFixed(1)}</b><span class="bar"><i style="width:${p.trg}%"></i></span></span>
+          <span class="sc">ACCESS <b>${p.acc.toFixed(0)}</b><span class="bar"><i style="width:${p.acc/40*100}%"></i></span></span>
+          <span class="sc">COVERAGE <b>${p.cov}%</b></span>
+        </div>
+        <p class="hook">${p.hook}</p>
+        <p class="note">${p.note}</p>
+        <p class="src"><a href="${p.url}" target="_blank" rel="noopener">${p.src} ↗</a></p>
+      </div>`;
+    reg.appendChild(el);
+  });
+}
+document.querySelectorAll(".chip").forEach(b=>b.addEventListener("click",()=>{
+  document.querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));
+  draw(b.dataset.f);
+}));
+draw("all");
+
+document.getElementById("cap").innerHTML=CAP.map(([k,v])=>
+  `<span>${k}</span><b>${v}%</b><span class="cbar${v===0?" zero":""}"><i style="width:${v===0?100:v}%"></i></span>`
+).join("");
+</script>
