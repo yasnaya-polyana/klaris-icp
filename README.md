@@ -44,6 +44,29 @@ Composite = 0.40·Fit + 0.45·Trigger + 0.15·(Access × 2.5)
 
 Trigger leads because at pre-seed you cannot manufacture need, only catch it.
 
+## FDA signal layer (added 2026-09-17)
+
+`fda/` mines openFDA for the two trigger families the first calibration found
+empty — `prior_regulatory_pain` (was 1% captured) and `new_product_to_market`
+(4%) — which carry 40 of the 100 trigger points between them. It also yields
+named regulatory contacts from 510(k) submission records.
+
+```bash
+python3 fda/build_cohort.py --states NC SC VA GA TN --months 18 \
+    --recall-years 6 --named-only --out out/fda_accounts.json
+python3 fda/apply_verification.py --cohort out/fda_accounts.json \
+    --verification out/verification-2026-09-17.json \
+    --out out/charlotte-12.json --verified-only
+python3 icp/score.py out/charlotte-12.json
+```
+
+The scoring model is unchanged — `icp/weights.yaml` and `icp/score.py` are
+exactly as calibrated. Only the evidence feeding them improved. See
+[`fda/README.md`](fda/README.md).
+
+Worked example: [`out/verification-2026-09-17.json`](out/verification-2026-09-17.json) — 91
+manufacturers across NC/SC/VA/GA/TN screened to 12, for RAPS Convergence 2026.
+
 ## Read this before trusting a score
 
 Thresholds are **provisional**, calibrated against one cohort of 13 accounts.

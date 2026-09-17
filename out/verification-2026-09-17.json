@@ -1,0 +1,293 @@
+{
+  "verified_at": "2026-09-17",
+  "verified_by": "manual public-source research",
+  "region": "NC / SC / VA / GA / TN - Charlotte drive radius, for RAPS Convergence 2026",
+  "note": "openFDA cannot supply headcount, corporate ownership or EU regime status. Everything in this file was checked by hand against public sources and carries its source URL. Disqualifications are recorded with a reason rather than deleted, so the same company is not re-researched next quarter.",
+
+  "companies": {
+    "Restor3D": {
+      "verified_at": "2026-09-17",
+      "domain": "restor3d.com",
+      "hq": "Durham, NC",
+      "headcount": 264,
+      "headcount_evidence": "246-282 staff reported across PitchBook/ZoomInfo; $74.2M revenue 2025",
+      "headcount_url": "https://pitchbook.com/profiles/company/223425-10",
+      "signals": [
+        {
+          "id": "vc_backed_or_recent_raise",
+          "evidence": "$293M raised to date; $104M round incl. $65M from a global PE firm",
+          "url": "https://www.ncbiotech.org/news/durham-based-restor3d-secures-104m-investment"
+        }
+      ],
+      "notes": "Highest submission cadence of any independent manufacturer in the region: 7 clearances in 18 months. Second contact Brianna Prindle is the likelier working-level champion."
+    },
+
+    "Grace Medical, Inc.": {
+      "verified_at": "2026-09-17",
+      "domain": "gracemedical.com",
+      "hq": "Memphis, TN",
+      "headcount": 82,
+      "headcount_evidence": "80 staff (PitchBook), 84 (RocketReach)",
+      "headcount_url": "https://pitchbook.com/profiles/company/123973-66",
+      "signals": [
+        {
+          "id": "post_ma_portfolio_integration",
+          "evidence": "Acquired by Innovia Medical on 2025-06-30 - two document estates now merging",
+          "url": "https://pitchbook.com/profiles/company/123973-66"
+        },
+        {
+          "id": "many_markets_or_ifu_languages",
+          "evidence": "ENT implants and instrumentation distributed worldwide from the Memphis facility",
+          "url": "https://www.gracemedical.com/about"
+        }
+      ],
+      "notes": "Sharpest account in the set. Recall Z-2308-2026 (June 2026) cause: 'incorrect functional length on device labeling' - a document disagreeing with the product, found by the regulator."
+    },
+
+    "Baebies, Inc.": {
+      "verified_at": "2026-09-17",
+      "domain": "baebies.com",
+      "hq": "Durham, NC",
+      "headcount": 75,
+      "headcount_evidence": "Estimated 50-100; NC Biotech Center directory listing. NOT firmly established - lowest-confidence headcount in this file.",
+      "headcount_url": "https://directory.ncbiotech.org/company/baebies-inc",
+      "signals": [
+        {
+          "id": "ivdr_transition_approaching",
+          "evidence": "SEEKER and FINDER hold CE marks granted under the old IVD Directive 98/79/EC; legacy IVDD certificates must be rebuilt to IVDR against a dated deadline",
+          "url": "https://www.biospace.com/baebies-announces-ce-mark-for-finder-an-innovative-near-patient-testing-platform-for-glucose-6-phosphate-dehydrogenase",
+          "age_days": 30
+        },
+        {
+          "id": "dual_regime_eu_and_us",
+          "evidence": "SEEKER FDA-authorised and CE-marked; FINDER CE-marked and under FDA review",
+          "url": "https://www.biospace.com/baebies-announces-ce-mark-for-finder-an-innovative-near-patient-testing-platform-for-glucose-6-phosphate-dehydrogenase"
+        },
+        {
+          "id": "new_market_entry_us_eu_or_eu_us",
+          "evidence": "FINDER commercially available in Europe, still under FDA review - running both regimes concurrently",
+          "url": "https://www.biospace.com/baebies-announces-ce-mark-for-finder-an-innovative-near-patient-testing-platform-for-glucose-6-phosphate-dehydrogenase",
+          "age_days": 60
+        }
+      ],
+      "notes": "The only account squarely in Klaris's FIRST regime (EU IVDR) rather than its second. Headcount is the weakest link - verify before working."
+    },
+
+    "Remington Medical, Inc.": {
+      "verified_at": "2026-09-17",
+      "domain": "remingtonmedical.com",
+      "hq": "Alpharetta, GA",
+      "headcount": null,
+      "headcount_evidence": "NOT ESTABLISHED from public sources - must be verified before this account is worked",
+      "headcount_url": null,
+      "notes": "Two separate documentation recalls: Z-0771-2023 ('stylet is longer than specified on the label') and Z-0487-2024 ('error with the Use by Date and Date of Manufacturer on the box label'). One is an accident; two is a process that does not catch document drift."
+    },
+
+    "Q3 Medical USA, LLC (C/O Q3 Medical Devices Ltd.)": {
+      "verified_at": "2026-09-17",
+      "domain": "q3medical.com",
+      "hq": "Charlotte, NC",
+      "headcount": null,
+      "headcount_evidence": "NOT ESTABLISHED - group spans Q3 Medical Devices Ltd (Dublin), amg International GmbH and QualiMed (Germany), QualiMed USA (Charlotte). Verify which entity employs the RA function.",
+      "headcount_url": null,
+      "signals": [
+        {
+          "id": "dual_regime_eu_and_us",
+          "evidence": "ARCHIMEDES holds CE mark via the German entities and a 510(k) via Q3 Medical USA - one device family, two regimes, three legal entities",
+          "url": "https://www.q3medical.com/news/ARCHIMEDES_CE_Mark_approval.pdf"
+        }
+      ],
+      "notes": "Headquartered in the RAPS host city. This is the cross-regime consistency case, not the gap-finding case."
+    },
+
+    "Rivanna Medical, Inc.": {
+      "verified_at": "2026-09-17",
+      "domain": "rivannamedical.com",
+      "hq": "Charlottesville, VA",
+      "headcount": 55,
+      "headcount_evidence": "Estimated; self-describes as a startup where staff cover multiple roles. Not firmly established.",
+      "headcount_url": "https://rivannamedical.com/about-us/",
+      "signals": [
+        {
+          "id": "dual_regime_eu_and_us",
+          "evidence": "Accuro holds FDA clearance, CE mark and Health Canada approval - three regimes on one imaging platform",
+          "url": "https://rivannamedical.com/about-us/"
+        },
+        {
+          "id": "new_market_entry_us_eu_or_eu_us",
+          "evidence": "Appointed a VP of Sales EMEA to drive European adoption of Accuro",
+          "url": "https://rivannamedical.com/rivanna-prepares-for-european-market-adoption-of-accuro-with-the-appointment-of-a-new-vice-president-of-sales-europe-the-middle-east-and-africa-emea/",
+          "age_days": 120
+        },
+        {
+          "id": "software_samd_or_ai",
+          "evidence": "Imaging-based bone visualisation - software-driven device",
+          "url": "https://rivannamedical.com/about-us/"
+        }
+      ],
+      "notes": "5 clearances in 18 months. Entering the EU properly is high-pain, low-capability: the team that built the FDA file is rarely the team that can build an MDR one."
+    },
+
+    "MiRus, LLC": {
+      "verified_at": "2026-09-17",
+      "domain": "mirusmed.com",
+      "hq": "Marietta, GA",
+      "headcount": 185,
+      "headcount_evidence": "129 (ZoomInfo) to 241 (Tracxn); midpoint taken",
+      "headcount_url": "https://www.zoominfo.com/c/mirus-llc/399592128",
+      "signals": [
+        {
+          "id": "vc_backed_or_recent_raise",
+          "evidence": "Boston Scientific took an approximate 34% stake for $1.5B in May 2026",
+          "url": "https://thespinemarketgroup.com/boston-scientific-puts-1-5-billion-on-mirus-why-the-spine-market-should-look-beyond-tavr/"
+        },
+        {
+          "id": "device_families_2_to_4",
+          "evidence": "Expanding from spine into cardiovascular on a proprietary molybdenum-rhenium alloy",
+          "url": "https://www.mirusmed.com/mirus-raises-65-million-for-expansion-of-rhenium-based-medical-devices/"
+        }
+      ],
+      "notes": "Novel biomaterial means its own biocompatibility evidence burden - ISO 10993 is the bounded, publicly priced product to lead with. Confirm the BSX stake has not made this a controlled subsidiary."
+    },
+
+    "Microaire Surgical Instruments, LLC": {
+      "verified_at": "2026-09-17",
+      "domain": "microaire.com",
+      "hq": "Charlottesville, VA",
+      "headcount": 163,
+      "headcount_evidence": "163 staff (ZoomInfo); 100 per a second source",
+      "headcount_url": "https://www.zoominfo.com/pic/microaire-surgical-instruments-llc/62473765",
+      "signals": [
+        {
+          "id": "many_markets_or_ifu_languages",
+          "evidence": "Designs, manufactures and ships worldwide from two Charlottesville facilities",
+          "url": "https://www.microaire.com/"
+        }
+      ],
+      "notes": "Established and independent, squarely in band. Recall Z-1975-2025 (June 2025) was a design/IFU question rather than labelling."
+    },
+
+    "Erchonia Corporation": {
+      "verified_at": "2026-09-17",
+      "domain": "erchonia.com",
+      "hq": "Fountain Inn, SC (corporate HQ Melbourne, FL)",
+      "headcount": 59,
+      "headcount_evidence": "59 staff",
+      "headcount_url": "https://rocketreach.co/erchonia-corporation-profile_b5e5f792f42e61a1",
+      "signals": [
+        {
+          "id": "device_families_5_plus",
+          "evidence": "Claims 22 of the 25 FDA clearances issued for low-level lasers; 18,000+ devices in market",
+          "url": "https://www.erchonia.com/news/erchonia-expands-presence-in-europe-with-erchonia-laser-ltd/"
+        },
+        {
+          "id": "many_markets_or_ifu_languages",
+          "evidence": "Operates in 40+ countries through Erchonia Lasers Ltd (UK) for EMEA",
+          "url": "https://www.erchonia.com/news/erchonia-expands-presence-in-europe-with-erchonia-laser-ltd/"
+        }
+      ],
+      "notes": "22 clearances maintained by 59 people is the clearest capacity-to-document-surface mismatch in the set."
+    },
+
+    "Theramicro": {
+      "verified_at": "2026-09-17",
+      "domain": "theramicro.com",
+      "hq": "Cordova, TN",
+      "headcount": null,
+      "headcount_evidence": "Public sources say 1-50, which may fall below the 30 floor. NOT RESOLVED.",
+      "headcount_url": "https://mtec-sc.org/life-sciences/theramicro-llc",
+      "contact_title": "Head of RA/QA",
+      "notes": "Christine Scifert's TITLE is printed on the FDA decision document itself (K251063), not inferred from a profile - the only confirmed seniority in this register. At this company size, Head of RA/QA is the economic buyer, not a champion."
+    },
+
+    "Osteoremedies, LLC": {
+      "verified_at": "2026-09-17",
+      "domain": "osteoremedies.com",
+      "hq": "Germantown, TN",
+      "headcount": 35,
+      "headcount_evidence": "37 staff (Jul 2026), 33 (May 2025)",
+      "headcount_url": "https://rocketreach.co/osteoremedies-llc-profile_b4435493fdfb2f4c",
+      "notes": "Clears the 30-person floor by three or four people - exactly where the pain-to-capacity ratio is worst. Three distinct device families (spacers, hip, bone cement) for ~35 staff. Second contact: Rachel Kennedy."
+    },
+
+    "Degen Medical": {
+      "verified_at": "2026-09-17",
+      "domain": "degenmedical.com",
+      "hq": "Florence, SC",
+      "headcount": null,
+      "headcount_evidence": "11-50 range reported; likely BELOW the 30 floor. NOT RESOLVED - verify before committing a meeting slot.",
+      "headcount_url": "https://www.cbinsights.com/company/degen-medical",
+      "signals": [
+        {
+          "id": "public_launch_or_approval_target_next_year",
+          "evidence": "Announced expansion of its patient-specific spine platform in May 2026",
+          "url": "https://www.globenewswire.com/news-release/2026/05/18/3296993/0/en/degen-medical-expands-patient-specific-spine-platform.html",
+          "age_days": 120
+        }
+      ],
+      "notes": "Patient-matched implants carry a heavier design-history burden than catalogue parts. Technically the most interesting file here and the least likely to clear the size gate."
+    },
+
+    "Bioventus, LLC": {
+      "verified_at": "2026-09-17",
+      "disqualified": "headcount_in_band: 954-1,200 staff - has solved this with people",
+      "headcount_url": "https://www.reveliolabs.com/companies/bioventus/employees"
+    },
+    "Artivion, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "headcount_in_band: ~1,500 staff"
+    },
+    "Cryosurgery, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "headcount_in_band: ~6 staff - no RA function to sell to",
+      "headcount_url": "https://rocketreach.co/cryosurgery-inc-profile_b5457206f60983db"
+    },
+    "Spectrum Spine": {
+      "verified_at": "2026-09-17",
+      "disqualified": "headcount_in_band: ~4 staff",
+      "headcount_url": "https://pitchbook.com/profiles/company/529324-39"
+    },
+    "Contego Medical, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "headcount_in_band: 5-10 staff, despite an otherwise ideal CE + FDA carotid stent profile",
+      "headcount_url": "https://leadiq.com/c/contego-medical-inc/5a1d89b72400002400630e0d/employee-directory"
+    },
+    "In2Bones USA, LLC": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: CONMED subsidiary since 2022 - parent owns the file",
+      "headcount_url": "https://conmed.gcs-web.com/news-releases/news-release-details/conmed-completes-acquisition-in2bones-global-inc"
+    },
+    "Hemosonics, LLC": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: part of the Stago group - parent owns the file"
+    },
+    "K2m, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: Stryker subsidiary"
+    },
+    "Arrow International, LLC": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: Teleflex subsidiary"
+    },
+    "Wilson-Cook Medical, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: Cook Medical subsidiary"
+    },
+    "Ulthera, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: Merz subsidiary"
+    },
+    "Caire, Inc.": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: NGK subsidiary"
+    },
+    "Lincotek Medical": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: contract manufacturer - owns no technical file"
+    },
+    "Centers for Disease Control and Prevention": {
+      "verified_at": "2026-09-17",
+      "disqualified": "legal_manufacturer: government body, not a manufacturer"
+    }
+  }
+}
