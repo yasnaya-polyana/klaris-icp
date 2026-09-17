@@ -1,0 +1,56 @@
+# WHAT TO LOOK FOR
+# ----------------
+# Edit this file, then run:  python3 find_buyers.py
+#
+# This is the "who are we hunting" file. The "how much is each signal worth"
+# file is icp/weights.yaml - change that one to re-tune scoring.
+
+# ---------------------------------------------------------------------------
+# WHERE
+# ---------------------------------------------------------------------------
+# US state codes. The FDA records a manufacturer's state, so this is how you
+# pick a geography - a conference city, a sales territory, a trip.
+#   Charlotte / RAPS:  [NC, SC, VA, GA, TN]
+#   Boston / MassMEDIC: [MA, CT, RI, NH]
+#   Minneapolis:       [MN, WI, IA]
+#   Bay Area:          [CA]
+states: [NC, SC, VA, GA, TN]
+
+# ---------------------------------------------------------------------------
+# WHEN
+# ---------------------------------------------------------------------------
+# How far back to look for clearances. A 510(k) in the last 12-18 months means
+# a technical file was assembled recently, by people probably still in post.
+clearance_months: 18
+
+# How far back to look for recalls. Longer is fine - the scoring decays old
+# events automatically, so a 2019 recall will not be mistaken for a live one.
+recall_years: 6
+
+# ---------------------------------------------------------------------------
+# WHO COUNTS
+# ---------------------------------------------------------------------------
+# Only return companies with a named regulatory contact on the submission.
+# Set to false to see every manufacturer, named or not.
+require_named_contact: true
+
+# Drop companies with fewer than this many clearances in the window.
+# Raise to 2 or 3 to find continuous filers rather than one-offs.
+min_clearances: 1
+
+# Filter out companies too large to be a fit. openFDA has no headcount field,
+# so this is a name list, not a number - it removes the obvious giants and
+# their subsidiaries before a human wastes time on them.
+# Add anyone you keep seeing that you do not want.
+exclude_giants: true
+exclude_also: []
+  # - "Some Company You Keep Seeing"
+
+# ---------------------------------------------------------------------------
+# OUTPUT
+# ---------------------------------------------------------------------------
+# How many people to return.
+top: 25
+
+# Where to write the readable list. Set to null to print only.
+out: out/buyers.md

@@ -1,9 +1,64 @@
-# Klaris ICP — scoring model + buyer-discovery agent
+# Klaris ICP — find regulatory buyers to contact
 
-Qualifies medical device companies for [Klaris.ai](https://www.klaris.ai/) and
-finds the person who can buy. EU MDR/IVDR first, FDA second. 30–400 headcount.
+Finds the people at medical device companies who own the technical file, using
+the FDA's own public databases. No API key, no licence, no scraping, no paid
+enrichment. Every person it returns carries a link to the government record
+they were found on.
+
+## Use it
+
+```bash
+python3 find_buyers.py
+```
+
+That's the whole thing. It prints a ranked list of named regulatory contacts
+with the reason each one is worth a call, and writes `out/buyers.md`.
+
+Two files control it:
+
+| File | What it decides |
+|---|---|
+| **`target.yaml`** | Where and what you're hunting — states, date window, size filters, how many results |
+| **`icp/weights.yaml`** | What each signal is worth — every number in the scoring model |
+
+Want Boston instead of Charlotte? Change one line in `target.yaml`:
+
+```yaml
+states: [MA, CT, RI, NH]
+```
+
+Think prior regulatory pain should outrank a new clearance? Change the points
+in `icp/weights.yaml`. Nothing else needs touching — the scorer reads them.
+
+### What it searches
+
+- **openFDA 510(k)** — every clearance is a dated, public record that a
+  technical file was assembled, submitted and reviewed, and the submission
+  **names the regulatory contact who did it**.
+- **openFDA enforcement** — every recall, classified by cause, separating
+  documentation failures (a label, an IFU, a stated dimension) from
+  manufacturing defects. A documentation recall is one document contradicting
+  another, which is the sharpest buying signal available.
+
+### What it deliberately will not guess
+
+openFDA carries no headcount, no EU MDR/IVDR status, no funding and no hiring
+data. Those are flagged for verification rather than invented. Every result is
+marked *verify: headcount 30–400, owns its own technical file* — because a
+model that accepts vibes produces a pipeline built on vibes.
+
+`fda/apply_verification.py` folds your verification back in once you've done
+it, from a separate file, so re-running the search never overwrites human work.
+See [`out/verification-2026-09-17.json`](out/verification-2026-09-17.json) for a
+worked example: 91 manufacturers screened to 12, with all 13 disqualifications
+recorded with their reason.
+
+---
+
+## The model underneath
 
 ## Run it
+
 
 ```bash
 python3 icp/score.py out/accounts.json            # score + rank (calibrated thresholds)
