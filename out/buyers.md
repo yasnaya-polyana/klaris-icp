@@ -16,16 +16,16 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 | Match your ICP filters | 91  (89% of manufacturers found) |
 | with a documentation recall | 8  (9%) |
 | Shown | 25  (top 25 by score) |
-| Average ICP match of those shown | 83% |
+| Average ICP match of those shown | 60% |
 
-**ICP match** is the share of ICP criteria that FDA records can check which this company actually meets: legal manufacturer, FDA Class II device, in target states, named regulatory contact, continuous filer (2+ clearances), fresh clearance (last 180 days), documentation recall on record. Headcount (30–400) and ownership (not a subsidiary) cannot be checked from FDA data and are never counted - verify those by hand.
+**ICP match** counts only the criteria that separate one company from another: continuous filer (2+ clearances in the window), fresh clearance (last 180 days), and a documentation recall on record. Every company listed has already passed the search filters (legal manufacturer, FDA Class II device, in target states, named regulatory contact), so those are not counted - they would add the same points to everyone. Headcount (30–400) and ownership (not a subsidiary) cannot be checked from FDA data and are never counted - verify those by hand.
 
 ---
 
 ## 1. Thomas Fearnley — Grace Medical, Inc.
 
 - **Location:** Memphis, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: continuous filer
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: continuous filer
 - **Clearances in window:** 1
 - **Score:** 9.8
 - **Trigger:** Documentation recall - Recall Z-2308-2026 (Class II, 20260610): Due to incorrect functional length on device labeling.
@@ -36,7 +36,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 2. Knox Pittman — Restor3D
 
 - **Location:** Durham, NC
-- **ICP match:** 100% (7 of 7 checkable criteria)
+- **ICP match:** 100% (3 of 3 differentiating criteria)
 - **Clearances in window:** 7
 - **Score:** 9.4
 - **Trigger:** Documentation recall - Recall Z-1027-2022 (Class II, 20220511): During re-work of disposable instruments to relabel for 4-year shelf-life of disposable instruments, parts got mixed into other lots.
@@ -47,7 +47,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 3. F. William Mauldin — Rivanna Medical, Inc.
 
 - **Location:** Charlottesville, VA
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 5
 - **Score:** 9.0
 - **Trigger:** Recent clearance - 510(k) K253452 cleared 2026-07-24: Accuro 3S
@@ -58,7 +58,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 4. Tina Mornak — In2Bones USA, LLC
 
 - **Location:** Cordova, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: continuous filer
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: continuous filer
 - **Clearances in window:** 1
 - **Score:** 8.7
 - **Trigger:** Documentation recall - Recall Z-2355-2026 (Class II, 20260617): Due to the Magnetic Resonance Conditional Symbol missing on the carton, inner tray, and patient label.
@@ -69,7 +69,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 5. Christine Scifert — Theramicro
 
 - **Location:** Cordova, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 4
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K262729 cleared 2026-08-18: TeKBrace Solo Soft Tissue Reinforcement Device
@@ -80,7 +80,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 6. Ronald McDow — Cryosurgery, Inc.
 
 - **Location:** Nashville, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 3
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K261684 cleared 2026-09-05: FreezeSpray TA
@@ -91,7 +91,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 7. Sageev George — Bioventus, LLC
 
 - **Location:** Durham, NC
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 3
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K253877 cleared 2026-08-26: StimTrial Neuromodulation System
@@ -102,7 +102,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 8. Frank Ge — Brain Ultimate, Inc.
 
 - **Location:** Alpharetta, GA
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 3
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K261228 cleared 2026-08-14: QuickVision Ultimate rTMS
@@ -113,7 +113,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 9. Eric Stookey — Osteoremedies, LLC
 
 - **Location:** Germantown, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 3
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K262290 cleared 2026-07-24: REMEDY POLY+PLUS SNAP FIT Acetabular Cup
@@ -124,7 +124,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 10. Jonas Susaraba — Microport Orthopedics, Inc.
 
 - **Location:** Arlington, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K253728 cleared 2026-08-21: EVOLUTION® AM BIOFOAM® Tibial System
@@ -135,7 +135,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 11. Grace Hammond — Hh Global Technology, Inc.
 
 - **Location:** Buford, GA
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K262427 cleared 2026-08-10: Pen Needle (Ordinary Type I, Safety Type IIA, Safety Type IIB, Safety 
@@ -146,7 +146,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 12. Eric Mangiardi — Q3 Medical USA, LLC (C/O Q3 Medical Devices Ltd.)
 
 - **Location:** Charlotte, NC
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K260835 cleared 2026-07-27: ARCHIMEDES Biodegradable Stent (Medium)
@@ -157,7 +157,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 13. Felix Chung — Imagine Milling Technologies, LLC
 
 - **Location:** Chantilly, VA
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 7.8
 - **Trigger:** Recent clearance - 510(k) K261122 cleared 2026-06-27: MIST IC
@@ -168,7 +168,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 14. James Robinson — Spectrum Spine
 
 - **Location:** Jasper, GA
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 3
 - **Score:** 6.7
 - **Trigger:** Recent clearance - 510(k) K252240 cleared 2026-03-30: Spectrum Spine Cervical Cage System; Spectrum Spine Lumbar Cage System
@@ -179,7 +179,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 15. Jonathan Feldschuh — Daxor Corporation
 
 - **Location:** Oak Ridge, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 6.7
 - **Trigger:** Recent clearance - 510(k) K261099 cleared 2026-06-18: Blood Volume Analyzer (200)
@@ -190,7 +190,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 16. Alicia Altizer — Wilson-Cook Medical, Inc.
 
 - **Location:** Winston-Salem, NC
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 6.7
 - **Trigger:** Recent clearance - 510(k) K253302 cleared 2026-06-02: Hemospray Endoscopic Hemostat (HEMO-[X])
@@ -201,7 +201,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 17. Scott Jewett — Ulthera, Inc.
 
 - **Location:** Raleigh, NC
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 6.7
 - **Trigger:** Recent clearance - 510(k) K260618 cleared 2026-05-21: Ulthera® System
@@ -212,7 +212,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 18. Troy Walters — Lincotek Medical
 
 - **Location:** Bartlett, TN
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: documentation recall
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: documentation recall
 - **Clearances in window:** 2
 - **Score:** 6.7
 - **Trigger:** Recent clearance - 510(k) K252081 cleared 2026-03-27: SportLinc Syndesmosis Device
@@ -223,7 +223,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 19. Jeffrey Dendy — Heartvue.ai, Inc.
 
 - **Location:** Brentwood, TN
-- **ICP match:** 71% (5 of 7 checkable criteria) — missing: continuous filer, documentation recall
+- **ICP match:** 33% (1 of 3 differentiating criteria) — missing: continuous filer, documentation recall
 - **Clearances in window:** 1
 - **Score:** 6.6
 - **Trigger:** Recent clearance - 510(k) K260811 cleared 2026-08-26: Heartvue.Proton
@@ -234,7 +234,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 20. Enayatullah Motahedy — EM-TECH Solutions, Inc.
 
 - **Location:** Chantilly, VA
-- **ICP match:** 71% (5 of 7 checkable criteria) — missing: continuous filer, documentation recall
+- **ICP match:** 33% (1 of 3 differentiating criteria) — missing: continuous filer, documentation recall
 - **Clearances in window:** 1
 - **Score:** 6.6
 - **Trigger:** Recent clearance - 510(k) K254143 cleared 2026-08-10: EM-TECH Passive Ultrasound Probe Strap
@@ -245,7 +245,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 21. Brian Austin — Medimetrix, LLC
 
 - **Location:** Germantown, TN
-- **ICP match:** 71% (5 of 7 checkable criteria) — missing: continuous filer, documentation recall
+- **ICP match:** 33% (1 of 3 differentiating criteria) — missing: continuous filer, documentation recall
 - **Clearances in window:** 1
 - **Score:** 6.6
 - **Trigger:** Recent clearance - 510(k) K260572 cleared 2026-08-04: Marrow Marxman
@@ -256,7 +256,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 22. Lia Winter — Winter Innovations, Inc.
 
 - **Location:** Knoxville, TN
-- **ICP match:** 71% (5 of 7 checkable criteria) — missing: continuous filer, documentation recall
+- **ICP match:** 33% (1 of 3 differentiating criteria) — missing: continuous filer, documentation recall
 - **Clearances in window:** 1
 - **Score:** 6.6
 - **Trigger:** Recent clearance - 510(k) K261021 cleared 2026-07-01: EasyWhip Family
@@ -267,7 +267,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 23. Robert (Bobby) Leonardi — ElectroWire Medical
 
 - **Location:** Lexington, SC
-- **ICP match:** 71% (5 of 7 checkable criteria) — missing: continuous filer, documentation recall
+- **ICP match:** 33% (1 of 3 differentiating criteria) — missing: continuous filer, documentation recall
 - **Clearances in window:** 1
 - **Score:** 6.6
 - **Trigger:** Recent clearance - 510(k) K261745 cleared 2026-06-26: LightningWire Transseptal Puncture System (TPS)
@@ -278,7 +278,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 24. WenZhan Song — Intelligent Dots, LLC
 
 - **Location:** Peachtree Corner, GA
-- **ICP match:** 71% (5 of 7 checkable criteria) — missing: continuous filer, documentation recall
+- **ICP match:** 33% (1 of 3 differentiating criteria) — missing: continuous filer, documentation recall
 - **Clearances in window:** 1
 - **Score:** 6.6
 - **Trigger:** Recent clearance - 510(k) K253274 cleared 2026-06-25: BedDot (G1)
@@ -289,7 +289,7 @@ States: NC/SC/VA/GA/TN · clearances last 18 months · recalls last 6 years
 ## 25. Katie Walko — K2m, Inc.
 
 - **Location:** Leesburg, VA
-- **ICP match:** 86% (6 of 7 checkable criteria) — missing: fresh clearance
+- **ICP match:** 67% (2 of 3 differentiating criteria) — missing: fresh clearance
 - **Clearances in window:** 3
 - **Score:** 6.1
 - **Trigger:** Documentation recall - Recall Z-1697-2021 (Class II, 20210609): Mislabeled product labeling references incorrect length or height, or length and height for specific Lots, Sizes 10x22x14mm, 10x28x14mm, 10x22x15mm

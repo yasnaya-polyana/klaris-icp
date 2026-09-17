@@ -79,12 +79,14 @@ def linkedin_search(person, company):
 FRESH_DAYS = 180
 
 MATCH_NOTE = (
-    "**ICP match** is the share of ICP criteria that FDA records can check "
-    "which this company actually meets: legal manufacturer, FDA Class II device, "
-    "in target states, named regulatory contact, continuous filer (2+ clearances), "
-    "fresh clearance (last %d days), documentation recall on record. "
-    "Headcount (30–400) and ownership (not a subsidiary) cannot be checked from "
-    "FDA data and are never counted - verify those by hand." % FRESH_DAYS
+    "**ICP match** counts only the criteria that separate one company from "
+    "another: continuous filer (2+ clearances in the window), fresh clearance "
+    "(last %d days), and a documentation recall on record. Every company listed "
+    "has already passed the search filters (legal manufacturer, FDA Class II "
+    "device, in target states, named regulatory contact), so those are not "
+    "counted - they would add the same points to everyone. Headcount (30–400) "
+    "and ownership (not a subsidiary) cannot be checked from FDA data and are "
+    "never counted - verify those by hand." % FRESH_DAYS
 )
 
 
@@ -94,18 +96,17 @@ def has_doc_recall(account):
 
 
 def icp_match(account, comp):
-    """How much of the ICP this company is confirmed to meet, from FDA data.
+    """How strongly this company matches the ICP, from FDA data.
 
-    Only criteria the data can actually check are counted. Headcount and
-    ownership are left out rather than assumed, so 100% means 'everything we
-    can see fits', never 'confirmed fit'.
+    Only criteria that differ between companies are counted. The search filters
+    (legal manufacturer, Class II device, target states, named contact) are met
+    by everyone listed, so counting them would inflate every score equally.
+    Headcount and ownership are left out rather than assumed, so 100% means
+    'every differentiating signal FDA data can show is present', never
+    'confirmed fit'.
     """
     age = build_cohort.age_days(comp.get("latest_clearance", ""))
     checks = [
-        ("legal manufacturer", True),                       # 510(k) applicant of record
-        ("FDA Class II device", True),                      # a cleared 510(k)
-        ("in target states", True),                         # searched by state
-        ("named regulatory contact", bool(comp.get("contacts"))),
         ("continuous filer", comp.get("clearance_count", 0) >= 2),
         ("fresh clearance", age is not None and age <= FRESH_DAYS),
         ("documentation recall", has_doc_recall(account)),
@@ -255,7 +256,7 @@ def main():
         lines.append(
             "## %d. %s — %s\n\n"
             "- **Location:** %s\n"
-            "- **ICP match:** %d%% (%d of %d checkable criteria)%s\n"
+            "- **ICP match:** %d%% (%d of %d differentiating criteria)%s\n"
             "- **Clearances in window:** %d\n"
             "- **Score:** %.1f\n"
             "- **Trigger:** %s\n"
