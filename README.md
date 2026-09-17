@@ -1,134 +1,118 @@
-# Klaris ICP — find regulatory buyers to contact
+# Klaris Buyer Finder
 
-Finds the people at medical device companies who own the technical file, using
-the FDA's own public databases. No API key, no licence, no scraping, no paid
-enrichment. Every person it returns carries a link to the government record
-they were found on.
+**Finds medical device companies that need Klaris, and the person at each one to contact.**
 
-## Use it
+Built for Klaris to find accounts you might otherwise miss. It works from the FDA's own public records, so there is no attendee list, data provider or subscription to pay for, and every name comes with a link to the record it was found on.
 
-```bash
-python3 find_buyers.py
-```
-
-That's the whole thing. It prints a ranked list of named regulatory contacts
-with the reason each one is worth a call, and writes `out/buyers.md`.
-
-Two files control it:
-
-| File | What it decides |
-|---|---|
-| **`target.yaml`** | Where and what you're hunting — states, date window, size filters, how many results |
-| **`icp/weights.yaml`** | What each signal is worth — every number in the scoring model |
-
-Want Boston instead of Charlotte? Change one line in `target.yaml`:
-
-```yaml
-states: [MA, CT, RI, NH]
-```
-
-Think prior regulatory pain should outrank a new clearance? Change the points
-in `icp/weights.yaml`. Nothing else needs touching — the scorer reads them.
-
-### What it searches
-
-- **openFDA 510(k)** — every clearance is a dated, public record that a
-  technical file was assembled, submitted and reviewed, and the submission
-  **names the regulatory contact who did it**.
-- **openFDA enforcement** — every recall, classified by cause, separating
-  documentation failures (a label, an IFU, a stated dimension) from
-  manufacturing defects. A documentation recall is one document contradicting
-  another, which is the sharpest buying signal available.
-
-### What it deliberately will not guess
-
-openFDA carries no headcount, no EU MDR/IVDR status, no funding and no hiring
-data. Those are flagged for verification rather than invented. Every result is
-marked *verify: headcount 30–400, owns its own technical file* — because a
-model that accepts vibes produces a pipeline built on vibes.
-
-`fda/apply_verification.py` folds your verification back in once you've done
-it, from a separate file, so re-running the search never overwrites human work.
-See [`out/verification-2026-09-17.json`](out/verification-2026-09-17.json) for a
-worked example: 91 manufacturers screened to 12, with all 13 disqualifications
-recorded with their reason.
+**See a finished example:** [Google Sheet: 91 companies near Charlotte](https://docs.google.com/spreadsheets/d/1y--q06FYgWcXDkle0b3adF5ku36udTGITgaf9jlYaaI/edit)
 
 ---
 
-## The model underneath
+## What it does
 
-## Run it
+It looks for two things that suggest a company needs Klaris.
 
+**1. They've just been through an FDA submission.**
+When the FDA clears a device, the record names the person who handled the submission. A recent clearance means a technical file was just built and reviewed, and that person is usually the one who owns it.
 
-```bash
-python3 icp/score.py out/accounts.json            # score + rank (calibrated thresholds)
-python3 icp/score.py out/accounts.json --json     # machine-readable
-python3 icp/score.py out/accounts.json --full-evidence   # strict thresholds
-python3 icp/score.py acct.json --lenient          # count signals lacking a source URL
-```
+**2. A document has caused them a problem.**
+When a device is recalled, the FDA records why. The tool picks out recalls caused by documentation, such as a wrong label, a missing symbol or an incorrect measurement in the instructions. That is one document contradicting another, which is exactly what Klaris catches.
 
-Stdlib only — no `pip install`.
+It then ranks every company it finds and gives you a list like this:
 
-## Structure
+| Person to contact | Company | Why | Checked by hand |
+|---|---|---|---|
+| Thomas Fearnley | Grace Medical, Memphis | Recalled a device in June 2026 over an incorrect length on the labelling | Good fit, ~82 staff |
+| Knox Pittman | restor3d, Durham | 7 FDA clearances in 18 months, the most active filer in the region | Good fit, ~264 staff |
+| Will Mauldin | Rivanna Medical, Charlottesville | Cleared a new device in July 2026; already CE marked | Good fit, ~55 staff |
 
-- **`icp/weights.yaml`** — every number in the model. Tune here, nowhere else.
-- **`icp/score.py`** — deterministic scoring; the agent never does the arithmetic.
-- **`icp/signal-library.md`** — where to find each signal, what counts as evidence.
-- **`icp/buyer-map.md`** — buyer archetypes and twelve ways to find the economic buyer.
-- **`.claude/agents/icp-scorer.md`** — the subagent definition.
-- **`out/prospects.md`** — 12 named prospects, with sources and confidence levels.
-- **`docs/`** — design rationale and the calibration finding.
+Each row also links to the FDA record and to a LinkedIn search for the person.
 
-## The model in one screen
+---
 
-**Gates** (binary, fail → disqualify): legal manufacturer · 30–400 headcount ·
-Notified Body exposure (EU IIa+/Is/Im/Ir, IVDR B+, FDA II+) · technical file exists.
+## How to use it
 
-**Fit /100** — regulatory burden 30 · compliance spend evidence 25 ·
-company shape 20 · readiness 15 · document surface 10
+### First time only
 
-**Trigger /100** (decays: ×1.0 <90d, ×0.7, ×0.4, ×0.1 >1yr) —
-hiring QA/RA 30 · new product to market 30 · prior regulatory pain 25 ·
-deadline pressure 15
+1. On this page, click the green **Code** button, then **Download ZIP**. Unzip it.
+2. Open **Terminal** (on a Mac, press ⌘ + Space and type "Terminal").
+3. Type `cd ` (with a space after it), drag the unzipped folder into the Terminal window, and press Enter.
 
-**Access /40** — warm path 15 · buyer named 10 · champion 8 · buyer active 7
+Python 3 comes with most Macs. If Terminal says it isn't installed, download it from [python.org](https://www.python.org/downloads/).
+
+### Every time
+
+Type this and press Enter:
 
 ```
-Composite = 0.40·Fit + 0.45·Trigger + 0.15·(Access × 2.5)
+python3 find_buyers.py
 ```
 
-Trigger leads because at pre-seed you cannot manufacture need, only catch it.
+It takes about a minute and a half. When it's done you'll have:
 
-## FDA signal layer (added 2026-09-17)
+- **`out/buyers.csv`** — every company it found. Open it in Excel, or in Google Sheets via *File → Import*.
+- **`out/buyers.md`** — a readable list of the top 25.
 
-`fda/` mines openFDA for the two trigger families the first calibration found
-empty — `prior_regulatory_pain` (was 1% captured) and `new_product_to_market`
-(4%) — which carry 40 of the 100 trigger points between them. It also yields
-named regulatory contacts from 510(k) submission records.
+---
 
-```bash
-python3 fda/build_cohort.py --states NC SC VA GA TN --months 18 \
-    --recall-years 6 --named-only --out out/fda_accounts.json
-python3 fda/apply_verification.py --cohort out/fda_accounts.json \
-    --verification out/verification-2026-09-17.json \
-    --out out/charlotte-12.json --verified-only
-python3 icp/score.py out/charlotte-12.json
-```
+## Changing what it looks for
 
-The scoring model is unchanged — `icp/weights.yaml` and `icp/score.py` are
-exactly as calibrated. Only the evidence feeding them improved. See
-[`fda/README.md`](fda/README.md).
+You only ever need to edit two files. Open either one in any text editor, change a value, save it, and run the tool again.
 
-Worked example: [`out/verification-2026-09-17.json`](out/verification-2026-09-17.json) — 91
-manufacturers across NC/SC/VA/GA/TN screened to 12, for RAPS Convergence 2026.
+### `target.yaml`: where and when to look
 
-## Read this before trusting a score
+| Setting | What it does | Example |
+|---|---|---|
+| `states` | Which US states to search | `[MA, CT, RI, NH]` for Boston |
+| `clearance_months` | How far back to look for FDA clearances | `12` for only the last year |
+| `recall_years` | How far back to look for recalls | `6` |
+| `min_clearances` | Only include companies with at least this many clearances | `2` to find regular filers |
+| `exclude_also` | Company names to leave out | `["Company You Already Know"]` |
+| `top` | How many people to show in the readable list | `25` |
 
-Thresholds are **provisional**, calibrated against one cohort of 13 accounts.
-Public-source research captures only part of the model's theoretical signal —
-`deadline_pressure` captured 0% and `prior_regulatory_pain` 1%, and together
-they carry 40 of the 100 trigger points. The **ordering is trustworthy; the
-absolute cut-points are not, yet.** Every result prints a `coverage` figure so a
-low score from thin research is distinguishable from a genuinely poor account.
+The file includes ready-made state lists for Charlotte, Boston, Minneapolis and the Bay Area.
 
-See `docs/2026-09-11-klaris-icp-design.md` for the full calibration analysis.
+### `icp/weights.yaml`: what matters most
+
+This file sets how many points each signal is worth. If a documentation recall should count for more than a new clearance, raise its points. Every number in the scoring lives here and nowhere else, and each one has a note explaining what it means.
+
+---
+
+## Reading the results
+
+**ICP match** shows how many of three buying signals a company has:
+- **Regular filer**: 2 or more FDA clearances in the time window
+- **Recent clearance**: one in the last 6 months
+- **Documentation recall**: a recall caused by labelling or paperwork
+
+100% means all three, and 33% means one. The "Signals missing" column tells you which are absent.
+
+**Score** is the overall ranking. It also gives less weight to older events, so a recall from four years ago counts for much less than one from last month.
+
+**Checked by hand** shows whether someone has already looked at the company:
+- **Good fit**: checked, and the right size and independently owned
+- **Ruled out**: checked and not a fit, with the reason (too big, too small, or owned by a larger group). These sit at the bottom of the sheet.
+- **Not checked yet**: have a look before reaching out
+
+---
+
+## What it can't tell you
+
+The FDA doesn't record **company size** or **who owns a company**. So before contacting anyone marked *Not checked yet*, spend two minutes on LinkedIn or their website to confirm that:
+
+- they have roughly 30–400 employees, and
+- they aren't a subsidiary of a larger group, whose parent company would own the paperwork.
+
+When you check a company, add it to `out/verification-2026-09-17.json` and it will show as checked (or ruled out) on the next run.
+
+The person named on an FDA submission is occasionally an outside consultant rather than an employee. The LinkedIn search will usually make that obvious.
+
+---
+
+## Good to know
+
+- **Free and needs no login.** It uses the FDA's public data service (openFDA). There's no API key or account.
+- **US only for now.** The EU has no equivalent public database of named regulatory contacts yet.
+- **Every name is checkable.** Each row links to the government record it came from.
+
+Technical detail, including how the scoring model was built and calibrated, is in [docs/how-it-works.md](docs/how-it-works.md).

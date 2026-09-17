@@ -29,7 +29,10 @@ are marked for verification rather than guessed. An unknown is recorded as an
 unknown - a model that accepts vibes produces a pipeline built on vibes.
 """
 
+import csv
 import datetime as dt
+import glob
+import json
 import os
 import sys
 import urllib.parse
@@ -65,6 +68,7 @@ def load_target(path):
     cfg.setdefault("exclude_also", [])
     cfg.setdefault("top", 25)
     cfg.setdefault("out", None)
+    cfg.setdefault("csv", None)
     return cfg
 
 
@@ -138,6 +142,67 @@ def summary_lines(s, cfg):
         ("Shown", "%d  (top %d by score)" % (s["shown"], cfg["top"])),
         ("Average ICP match of those shown", "%d%%" % round(s["avg_match"])),
     ]
+
+
+def load_checks():
+    """Hand checks from out/verification-*.json, keyed by normalised company."""
+    checks = {}
+    for path in sorted(glob.glob(os.path.join(HERE, "out", "verification-*.json"))):
+        with open(path) as f:
+            for name, v in json.load(f).get("companies", {}).items():
+                checks[openfda.normalise(name)] = v
+    return checks
+
+
+def check_status(company, checks):
+    v = checks.get(openfda.normalise(company))
+    if v is None:
+        return "Not checked yet", False
+    if v.get("disqualified"):
+        reason = v["disqualified"].split(":", 1)[-1].strip()
+        return "Ruled out: " + reason, True
+    if v.get("headcount") is None:
+        return "Checked: good fit, headcount not confirmed", False
+    return "Checked: good fit (~%d staff)" % v["headcount"], False
+
+
+def write_csv(path, rows, checks, cfg):
+    records = []
+    for result, account, comp, match in rows:
+        status, ruled_out = check_status(account["company"], checks)
+        person = comp["contacts"][0] if comp.get("contacts") else None
+        name = person["name"] if person else ""
+        records.append((ruled_out, -result["composite"], [
+            name,
+            account["company"],
+            account["hq"],
+            "%d%%" % match["pct"],
+            "%.1f" % result["composite"],
+            headline_trigger(account),
+            ", ".join(match["missing"]) or "none",
+            comp.get("clearance_count", 0),
+            comp.get("latest_clearance", ""),
+            "yes" if has_doc_recall(account) else "no",
+            status,
+            person["url"] if person else "",
+            linkedin_search(name, account["company"]) if person else "",
+        ]))
+    # Ruled-out companies go to the bottom so the sheet opens on live accounts.
+    records.sort(key=lambda r: (r[0], r[1]))
+
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path, "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow([
+            "Rank", "Person to contact", "Company", "Location", "ICP match",
+            "Score", "Why they're worth contacting", "Signals missing",
+            "Clearances (last %d months)" % cfg["clearance_months"],
+            "Latest clearance", "Documentation recall", "Checked by hand",
+            "FDA record", "LinkedIn search",
+        ])
+        for i, (_, _, row) in enumerate(records, 1):
+            w.writerow([i] + row)
+    return len(records)
 
 
 def headline_trigger(account):
@@ -289,6 +354,13 @@ def main():
             f.write("\n" + MATCH_NOTE + "\n\n---\n\n")
             f.write("\n".join(lines))
         print(c("  Written to %s" % out, GREEN))
+        print()
+
+    csv_out = cfg.get("csv")
+    if csv_out:
+        path = csv_out if os.path.isabs(csv_out) else os.path.join(HERE, csv_out)
+        n = write_csv(path, rows, load_checks(), cfg)
+        print(c("  Spreadsheet of all %d accounts written to %s" % (n, csv_out), GREEN))
         print()
 
     print(c("  Tune what you are hunting   -> target.yaml", DIM))

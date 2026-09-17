@@ -52,5 +52,10 @@ exclude_also: []
 # How many people to return.
 top: 25
 
-# Where to write the readable list. Set to null to print only.
+# Where to write the readable list of the top results. Set to null to skip.
 out: out/buyers.md
+
+# Where to write a spreadsheet of EVERY matching account (not just the top),
+# with the person to contact and a LinkedIn search link. Opens in Excel or
+# imports into Google Sheets. Set to null to skip.
+csv: out/buyers.csv
