@@ -32,6 +32,7 @@ unknown - a model that accepts vibes produces a pipeline built on vibes.
 import datetime as dt
 import os
 import sys
+import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.join(HERE, "fda"))
@@ -65,6 +66,14 @@ def load_target(path):
     cfg.setdefault("top", 25)
     cfg.setdefault("out", None)
     return cfg
+
+
+def linkedin_search(person, company):
+    """A LinkedIn people-search link. Not a scraped profile: LinkedIn's terms
+    forbid automated lookup, so this opens the search for a human to confirm."""
+    keywords = "%s %s" % (person, openfda.normalise(company))
+    return "https://www.linkedin.com/search/results/people/?" + urllib.parse.urlencode(
+        {"keywords": keywords})
 
 
 def headline_trigger(account):
@@ -152,7 +161,8 @@ def main():
         print("      %s - %s" % (account["company"], account["hq"]))
         print("      %s" % c(headline_trigger(account), DIM))
         if person:
-            print("      %s" % c(person["url"], CYAN))
+            print("      FDA record  %s" % c(person["url"], CYAN))
+            print("      LinkedIn    %s" % c(linkedin_search(name, account["company"]), CYAN))
         print("      %s" % c("verify: headcount 30-400, owns its own technical file", YELLOW))
         print()
 
@@ -162,13 +172,15 @@ def main():
             "- **Clearances in window:** %d\n"
             "- **Score:** %.1f\n"
             "- **Trigger:** %s\n"
-            "- **Source:** %s\n"
+            "- **FDA record:** %s\n"
+            "- **LinkedIn search:** %s\n"
             "- **Verify before contacting:** headcount in 30–400 band; is the legal "
             "manufacturer, not a contract manufacturer or a subsidiary\n"
             % (i, name, account["company"], account["hq"],
                comp.get("clearance_count", 0),
                result["composite"], headline_trigger(account),
-               person["url"] if person else "n/a")
+               person["url"] if person else "n/a",
+               linkedin_search(name, account["company"]) if person else "n/a")
         )
 
     out = cfg.get("out")
